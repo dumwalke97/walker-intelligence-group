@@ -112,14 +112,10 @@
       color: var(--gold-lt);
     }
 
-    .header-meta {
-      text-align: right;
-      font-family: var(--mono);
-      font-size: clamp(0.55rem, 0.9vw, 0.65rem);
-      color: var(--muted);
-      letter-spacing: 0.12em;
-      line-height: 2;
-      padding-top: 0.25em;
+    .header-logo {
+      height: clamp(48px, 7vw, 72px);
+      width: auto;
+      opacity: 0.92;
     }
 
     /* ── HERO ── */
@@ -301,7 +297,7 @@
 
     @media (max-width: 900px) {
       .deco-numeral { display: none; }
-      .header-meta { display: none; }
+      .header-logo { display: none; }
       .service-label { font-size: 0.9rem; }
     }
 
@@ -374,10 +370,7 @@
       <span class="wordmark-top">Est. 2026</span>
       <span class="wordmark-main">Walker <span>Intelligence Group</span></span>
     </div>
-    <div class="header-meta">
-      <div>AI &amp; Technology Consulting</div>
-      <div>walkerig.com</div>
-    </div>
+    <img src="wig-logo.png" alt="Walker Intelligence Group" class="header-logo" />
   </header>
 
   <!-- Hero -->
