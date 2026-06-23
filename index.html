@@ -601,17 +601,13 @@
     }
 
     .svc-body {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows 0.3s ease;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.35s ease;
     }
 
     .svc-body.open {
-      grid-template-rows: 1fr;
-    }
-
-    .svc-body > * {
-      overflow: hidden;
+      max-height: 400px;
     }
 
     .svc-body-inner {
