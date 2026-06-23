@@ -1205,19 +1205,16 @@
     });
   });
 
-  // Show success message if redirected back after form submission
+  // Show confirmation and hide form after submission
   if (new URLSearchParams(window.location.search).get('sent') === '1') {
     history.replaceState(null, '', window.location.pathname);
-    // Open nav to contact panel to show confirmation
     openNav();
     document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
     document.querySelectorAll('.nav-panel').forEach(p => p.classList.remove('active'));
     document.querySelector('[data-panel="contact"]').classList.add('active');
     document.getElementById('panel-contact').classList.add('active');
-    const status = document.createElement('p');
-    status.style.cssText = 'font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;color:var(--gold-lt);margin-top:1rem;';
-    status.textContent = "Message sent. We'll be in touch.";
-    document.querySelector('.contact-form').appendChild(status);
+    const form = document.querySelector('.contact-form');
+    form.innerHTML = '<p style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.15em;color:var(--gold-lt);line-height:1.8;">Message sent.<br>We\'ll be in touch.</p>';
   }
 </script>
 
