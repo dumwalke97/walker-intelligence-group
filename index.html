@@ -965,7 +965,10 @@
           <a href="tel:+13175317681">317-531-7681</a>
         </div>
         <div class="contact-divider"></div>
-        <form class="contact-form" id="contactForm">
+        <form class="contact-form" action="https://formsubmit.co/dustin@walkerig.com" method="POST">
+          <input type="hidden" name="_subject" value="New inquiry from walkerig.com" />
+          <input type="hidden" name="_next" value="https://walkerig.com?sent=1" />
+          <input type="hidden" name="_captcha" value="false" />
           <div class="field">
             <label for="cf-name">Name</label>
             <input type="text" id="cf-name" name="name" placeholder="Your name" required />
@@ -979,7 +982,6 @@
             <textarea id="cf-message" name="message" placeholder="How can we help?" required></textarea>
           </div>
           <button type="submit">Send Message</button>
-          <div class="form-status" id="formStatus" aria-live="polite"></div>
         </form>
       </div>
 
@@ -1203,44 +1205,20 @@
     });
   });
 
-  // Contact form - submits via FormSubmit.co (free, no account needed)
-  // On first submission, FormSubmit sends a verification email to dustin@walkerig.com - click it once to activate.
-  const form       = document.getElementById('contactForm');
-  const formStatus = document.getElementById('formStatus');
-
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-    formStatus.textContent = '';
-    formStatus.className = 'form-status';
-
-    const data = new FormData(form);
-    data.append('_subject', 'New inquiry from walkerig.com');
-    data.append('_captcha', 'false');
-
-    try {
-      const res = await fetch('https://formsubmit.co/ajax/dustin@walkerig.com', {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' }
-      });
-      if (res.ok) {
-        formStatus.textContent = 'Message sent. We\'ll be in touch.';
-        formStatus.className = 'form-status success';
-        form.reset();
-      } else {
-        throw new Error();
-      }
-    } catch {
-      formStatus.textContent = 'Something went wrong. Please email us directly.';
-      formStatus.className = 'form-status error';
-    } finally {
-      btn.textContent = 'Send Message';
-      btn.disabled = false;
-    }
-  });
+  // Show success message if redirected back after form submission
+  if (new URLSearchParams(window.location.search).get('sent') === '1') {
+    history.replaceState(null, '', window.location.pathname);
+    // Open nav to contact panel to show confirmation
+    openNav();
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.nav-panel').forEach(p => p.classList.remove('active'));
+    document.querySelector('[data-panel="contact"]').classList.add('active');
+    document.getElementById('panel-contact').classList.add('active');
+    const status = document.createElement('p');
+    status.style.cssText = 'font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;color:var(--gold-lt);margin-top:1rem;';
+    status.textContent = "Message sent. We'll be in touch.";
+    document.querySelector('.contact-form').appendChild(status);
+  }
 </script>
 
 </body>
