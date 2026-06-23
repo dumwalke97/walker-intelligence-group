@@ -471,7 +471,23 @@
       padding: 2rem 2rem 1.5rem;
       border-bottom: 1px solid var(--rule);
       flex-shrink: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+
+    .nav-close {
+      background: none;
+      border: none;
+      color: var(--gold);
+      font-size: 1.8rem;
+      line-height: 1;
+      cursor: pointer;
+      padding: 0.25rem;
+      transition: color 0.2s;
+    }
+
+    .nav-close:hover { color: var(--gold-lt); }
 
     .nav-tabs {
       display: flex;
@@ -834,6 +850,12 @@
   <nav class="nav-drawer" role="dialog" aria-label="Site navigation">
     <div class="nav-header">
       <span class="wordmark-top" style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);">Walker Intelligence Group</span>
+      <button class="nav-close" id="navClose" aria-label="Close navigation">
+        <svg width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="1" y1="1" x2="17" y2="17" stroke="currentColor" stroke-width="1"/>
+          <line x1="17" y1="1" x2="1" y2="17" stroke="currentColor" stroke-width="1"/>
+        </svg>
+      </button>
     </div>
     <div class="nav-tabs" role="tablist">
       <button class="nav-tab active" role="tab" data-panel="about">About</button>
@@ -1099,6 +1121,7 @@
   });
 
   backdrop.addEventListener('click', closeNav);
+  document.getElementById('navClose').addEventListener('click', closeNav);
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeNav();
