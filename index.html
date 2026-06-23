@@ -713,13 +713,14 @@
       border: 1px solid var(--rule);
       color: var(--paper);
       font-family: var(--serif);
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: 300;
       padding: 0.7rem 0.9rem;
       outline: none;
       transition: border-color 0.2s;
       border-radius: 0;
       -webkit-appearance: none;
+      transform: translateZ(0);
     }
 
     .contact-form input:focus,
@@ -1192,6 +1193,13 @@
       const isOpen = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', !isOpen);
       body.classList.toggle('open', !isOpen);
+    });
+  });
+
+  // Scroll input into view on iOS when keyboard opens
+  document.querySelectorAll('.contact-form input, .contact-form textarea').forEach(el => {
+    el.addEventListener('focus', () => {
+      setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 300);
     });
   });
 
