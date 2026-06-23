@@ -88,6 +88,38 @@
       animation: fadeDown 1s cubic-bezier(.16,1,.3,1) both;
     }
 
+    .header-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    /* ── HAMBURGER ── */
+    .hamburger {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      align-self: center;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--gold);
+      transition: transform 0.35s ease, opacity 0.25s ease;
+      transform-origin: center;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
     .wordmark {
       display: flex;
       flex-direction: column;
@@ -129,28 +161,6 @@
       justify-content: center;
       padding: clamp(4rem, 10vw, 8rem) clamp(2rem, 8vw, 6rem);
       position: relative;
-    }
-
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      margin-bottom: 2.5rem;
-      animation: fadeUp 1s .2s cubic-bezier(.16,1,.3,1) both;
-    }
-
-    .eyebrow-line {
-      width: 3rem;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .eyebrow-text {
-      font-family: var(--mono);
-      font-size: clamp(0.6rem, 1vw, 0.7rem);
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
     }
 
     .hero-headline {
@@ -207,8 +217,9 @@
 
     .service-label {
       font-size: clamp(0.95rem, 1.4vw, 1.1rem);
-      font-weight: 400;
+      font-weight: 600;
       line-height: 1.3;
+      color: var(--paper);
     }
 
     .service-sub {
@@ -219,7 +230,162 @@
       margin-top: 0.5rem;
     }
 
-    /* ── LARGE DECORATIVE NUMBER ── */
+    /* ── SERVICE ITEM AS BUTTON ── */
+    .service-item {
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .service-item:hover { opacity: 0.75; }
+
+    .service-hint {
+      font-family: var(--mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-top: 0.75rem;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .service-item:hover .service-hint { opacity: 1; }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      pointer-events: none;
+    }
+
+    .modal-overlay.open { pointer-events: all; }
+
+    .modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(11,12,14,0.8);
+      backdrop-filter: blur(6px);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .modal-overlay.open .modal-backdrop { opacity: 1; }
+
+    .modal {
+      position: relative;
+      background: #0f1012;
+      border: 1px solid var(--rule);
+      max-width: 540px;
+      width: 100%;
+      padding: 3rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.35s ease, transform 0.35s cubic-bezier(.16,1,.3,1);
+      display: none;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal.active {
+      display: block;
+    }
+
+    .modal-overlay.open .modal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.2s;
+      padding: 0.25rem;
+    }
+
+    .modal-close:hover { color: var(--paper); }
+
+    .modal-num {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .modal-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.4rem;
+      line-height: 1.2;
+    }
+
+    .modal-sub {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      margin-bottom: 1.8rem;
+      text-transform: uppercase;
+    }
+
+    .modal-desc {
+      font-size: 1rem;
+      color: rgba(245,242,236,0.65);
+      line-height: 1.8;
+      margin-bottom: 1.8rem;
+      border-top: 1px solid var(--rule);
+      padding-top: 1.5rem;
+    }
+
+    .modal-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .modal-list li {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      color: rgba(245,242,236,0.65);
+      padding-left: 1.3rem;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .modal-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.45em;
+      width: 5px;
+      height: 5px;
+      border: 1px solid var(--gold);
+      opacity: 0.6;
+    }
+
+    @media (max-width: 560px) {
+      .modal { padding: 2rem 1.5rem; }
+    }
+
+    /* ── LARGE DECORATIVE LETTER ── */
     .deco-numeral {
       position: absolute;
       right: clamp(2rem, 8vw, 6rem);
@@ -239,7 +405,7 @@
     /* ── FOOTER ── */
     footer {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
@@ -252,29 +418,325 @@
       animation: fadeUp 1s .8s cubic-bezier(.16,1,.3,1) both;
     }
 
-    .footer-status {
+    /* ── NAV OVERLAY ── */
+    .nav-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
       display: flex;
+      pointer-events: none;
+    }
+
+    .nav-overlay.open { pointer-events: all; }
+
+    .nav-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(11,12,14,0.7);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .nav-overlay.open .nav-backdrop { opacity: 1; }
+
+    .nav-drawer {
+      position: relative;
+      width: min(420px, 90vw);
+      height: 100%;
+      background: #0f1012;
+      border-right: 1px solid var(--rule);
+      transform: translateX(-100%);
+      transition: transform 0.4s cubic-bezier(.16,1,.3,1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .nav-overlay.open .nav-drawer { transform: translateX(0); }
+
+    .nav-header {
+      padding: 2rem 2rem 1.5rem;
+      border-bottom: 1px solid var(--rule);
+      flex-shrink: 0;
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid var(--rule);
+      flex-shrink: 0;
+    }
+
+    .nav-tab {
+      flex: 1;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 1rem 0.5rem;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+      margin-bottom: -1px;
+    }
+
+    .nav-tab:hover { color: var(--paper); }
+    .nav-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+    .nav-panels {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .nav-panel {
+      display: none;
+      padding: 2.5rem 2rem;
+      animation: fadeIn 0.3s ease both;
+    }
+
+    .nav-panel.active { display: block; }
+
+    /* About panel */
+    .nav-panel h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .nav-panel h2 em { font-style: italic; color: var(--gold-lt); }
+
+    .nav-panel p {
+      font-size: 1rem;
+      color: rgba(245,242,236,0.7);
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+
+    /* Services panel */
+    .drawer-service {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .drawer-service:first-child { padding-top: 0; }
+    .drawer-service:last-child { border-bottom: none; }
+
+    .drawer-service .service-num {
+      margin-bottom: 0.5rem;
+    }
+
+    .drawer-service .service-label {
+      font-size: 1.15rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .drawer-service .service-sub {
+      font-size: 0.6rem;
+    }
+
+    /* Services accordion */
+    .svc-card {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .svc-card:last-child { border-bottom: none; }
+
+    .svc-toggle {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 0.65rem;
+      padding: 1.4rem 0;
+      text-align: left;
+      gap: 1rem;
     }
 
-    .status-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--gold);
-      animation: pulse 2.5s ease-in-out infinite;
+    .svc-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--paper);
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
     }
 
-    .footer-contact a {
+    .svc-toggle:hover .svc-title { color: var(--gold-lt); }
+
+    .svc-chevron {
+      width: 8px;
+      height: 8px;
+      border-right: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      margin-top: -3px;
+    }
+
+    .svc-toggle[aria-expanded="true"] .svc-chevron {
+      transform: rotate(-135deg);
+      margin-top: 3px;
+    }
+
+    .svc-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s ease;
+    }
+
+    .svc-body.open {
+      grid-template-rows: 1fr;
+    }
+
+    .svc-body > * {
+      overflow: hidden;
+    }
+
+    .svc-body-inner {
+      padding-bottom: 1.4rem;
+    }
+
+    .svc-desc {
+      font-size: 0.9rem;
+      color: rgba(245,242,236,0.55);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .svc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .svc-list li {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      color: rgba(245,242,236,0.65);
+      padding-left: 1.2rem;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .svc-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.45em;
+      width: 5px;
+      height: 5px;
+      border: 1px solid var(--gold);
+      opacity: 0.6;
+    }
+
+    /* Contact panel */
+    .contact-info {
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .contact-info a {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
       color: var(--paper);
       text-decoration: none;
-      opacity: 0.5;
-      transition: opacity .2s;
-      letter-spacing: 0.08em;
+      opacity: 0.7;
+      transition: opacity 0.2s;
     }
 
-    .footer-contact a:hover { opacity: 1; }
+    .contact-info a:hover { opacity: 1; color: var(--gold-lt); }
+
+    .contact-divider {
+      width: 2rem;
+      height: 1px;
+      background: var(--rule);
+      margin-bottom: 2rem;
+    }
+
+    .contact-form label {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-form .field {
+      margin-bottom: 1.4rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      background: rgba(245,242,236,0.04);
+      border: 1px solid var(--rule);
+      color: var(--paper);
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      font-weight: 300;
+      padding: 0.7rem 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+      border-radius: 0;
+      -webkit-appearance: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .contact-form button[type="submit"] {
+      background: none;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 0.75rem 2rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      width: 100%;
+    }
+
+    .contact-form button[type="submit"]:hover {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    .form-status {
+      margin-top: 1rem;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      min-height: 1.2em;
+    }
+
+    .form-status.success { color: var(--gold-lt); }
+    .form-status.error   { color: #c0645a; }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeDown {
@@ -298,7 +760,6 @@
     }
 
     /* ── RESPONSIVE ── */
-
     @media (max-width: 900px) {
       .deco-numeral { display: none; }
       .header-logo { display: none; }
@@ -336,18 +797,11 @@
     </defs>
     <rect width="1440" height="900" fill="url(#rg1)"/>
     <rect width="1440" height="900" fill="url(#rg2)"/>
-
-    <!-- Architectural lines -->
     <line x1="1100" y1="0" x2="680" y2="900" stroke="#b8975a" stroke-width="0.5" stroke-opacity="0.12"/>
     <line x1="1200" y1="0" x2="780" y2="900" stroke="#b8975a" stroke-width="0.5" stroke-opacity="0.07"/>
     <line x1="1320" y1="0" x2="900" y2="900" stroke="#b8975a" stroke-width="0.5" stroke-opacity="0.05"/>
-
-    <!-- Corner bracket top-right -->
     <path d="M1380 20 L1420 20 L1420 60" stroke="#b8975a" stroke-width="1" stroke-opacity="0.3" fill="none"/>
-    <!-- Corner bracket bottom-left -->
     <path d="M20 880 L20 840 L60 840" stroke="#b8975a" stroke-width="1" stroke-opacity="0.3" fill="none"/>
-
-    <!-- Fine grid dots (sparse) -->
     <g fill="#b8975a" fill-opacity="0.15">
       <circle cx="900" cy="150" r="1.2"/>
       <circle cx="960" cy="150" r="1.2"/>
@@ -362,30 +816,166 @@
       <circle cx="1020" cy="270" r="1.2"/>
       <circle cx="1080" cy="270" r="1.2"/>
     </g>
-
-    <!-- Thin rectangle frame accent -->
     <rect x="950" y="380" width="420" height="260" stroke="#b8975a" stroke-width="0.6" stroke-opacity="0.08" fill="none"/>
   </svg>
+</div>
+
+<!-- Navigation overlay -->
+<div class="nav-overlay" id="navOverlay" aria-hidden="true">
+  <div class="nav-backdrop" id="navBackdrop"></div>
+  <nav class="nav-drawer" role="dialog" aria-label="Site navigation">
+    <div class="nav-header">
+      <span class="wordmark-top" style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);">Walker Intelligence Group</span>
+    </div>
+    <div class="nav-tabs" role="tablist">
+      <button class="nav-tab active" role="tab" data-panel="about">About</button>
+      <button class="nav-tab" role="tab" data-panel="services">Services</button>
+      <button class="nav-tab" role="tab" data-panel="contact">Contact</button>
+    </div>
+    <div class="nav-panels">
+
+      <!-- About -->
+      <div class="nav-panel active" id="panel-about" role="tabpanel">
+        <h2>Navigating the <em>AI era</em> together.</h2>
+        <p>Walker Intelligence Group is an AI and technology consulting firm built for organizations that need more than a vendor. They need a trusted partner who can translate the complexity of artificial intelligence and technology solutions into clear strategy and measurable outcomes.</p>
+        <p>We work with leadership teams and business stakeholders to assess where they are, define where they need to go, and build a credible path to get there, without the hype.</p>
+        <p>Founded in 2026 and based in Indianapolis, we bring the clarity and confidence your organization needs to move forward with purpose in an era of rapid change.</p>
+      </div>
+
+      <!-- Services -->
+      <div class="nav-panel" id="panel-services" role="tabpanel">
+
+        <div class="svc-card">
+          <button class="svc-toggle" aria-expanded="false">
+            <span class="svc-title">Workflow Automation</span>
+            <span class="svc-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="svc-body"><div class="svc-body-inner">
+            <p class="svc-desc">Stop paying people to do what software can handle.</p>
+            <ul class="svc-list">
+              <li>Automate repetitive data entry and reporting</li>
+              <li>Automatically route, notify, and follow up</li>
+              <li>Connect tools that don't talk to each other</li>
+              <li>Turn email or paper processes into automated workflows</li>
+            </ul>
+          </div></div>
+        </div>
+
+        <div class="svc-card">
+          <button class="svc-toggle" aria-expanded="false">
+            <span class="svc-title">Websites &amp; Custom Apps</span>
+            <span class="svc-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="svc-body"><div class="svc-body-inner">
+            <p class="svc-desc">A website that works for your business, not against it.</p>
+            <ul class="svc-list">
+              <li>Professional websites that generate leads</li>
+              <li>Online forms, portals, and client dashboards</li>
+              <li>Custom tools built around your exact process</li>
+              <li>Ongoing hosting, updates, and support</li>
+            </ul>
+          </div></div>
+        </div>
+
+        <div class="svc-card">
+          <button class="svc-toggle" aria-expanded="false">
+            <span class="svc-title">AI Integration</span>
+            <span class="svc-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="svc-body"><div class="svc-body-inner">
+            <p class="svc-desc">Put AI to work on real problems, not just demos.</p>
+            <ul class="svc-list">
+              <li>Identify where AI saves time in your business</li>
+              <li>Automate document review, summarization, and extraction</li>
+              <li>Build AI-powered tools your team actually uses</li>
+              <li>Safe implementation. Your data stays yours</li>
+            </ul>
+          </div></div>
+        </div>
+
+        <div class="svc-card">
+          <button class="svc-toggle" aria-expanded="false">
+            <span class="svc-title">Technology Infrastructure</span>
+            <span class="svc-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="svc-body"><div class="svc-body-inner">
+            <p class="svc-desc">A secure, organized foundation your business can rely on.</p>
+            <ul class="svc-list">
+              <li>Cloud setup, backups, and storage</li>
+              <li>Security assessment and risk reduction</li>
+              <li>Technology audit: know what you have and what's at risk</li>
+              <li>Scalable systems that grow with your business</li>
+            </ul>
+          </div></div>
+        </div>
+
+        <div class="svc-card">
+          <button class="svc-toggle" aria-expanded="false">
+            <span class="svc-title">AI Advisory</span>
+            <span class="svc-chevron" aria-hidden="true"></span>
+          </button>
+          <div class="svc-body"><div class="svc-body-inner">
+            <p class="svc-desc">Cut through the hype. Get a clear plan that makes sense for you.</p>
+            <ul class="svc-list">
+              <li>Plain-English assessment of your current technology</li>
+              <li>Identify the highest-ROI opportunities for AI</li>
+              <li>Tool recommendations based on your data sensitivity</li>
+              <li>Ongoing guidance as the technology evolves</li>
+            </ul>
+          </div></div>
+        </div>
+
+      </div>
+
+      <!-- Contact -->
+      <div class="nav-panel" id="panel-contact" role="tabpanel">
+        <div class="contact-info">
+          <a href="mailto:dustin@walkerig.com">dustin@walkerig.com</a>
+          <a href="tel:+13175317681">317-531-7681</a>
+        </div>
+        <div class="contact-divider"></div>
+        <form class="contact-form" id="contactForm">
+          <div class="field">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="field">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" placeholder="How can we help?" required></textarea>
+          </div>
+          <button type="submit">Send Message</button>
+          <div class="form-status" id="formStatus" aria-live="polite"></div>
+        </form>
+      </div>
+
+    </div>
+  </nav>
 </div>
 
 <div class="page">
 
   <!-- Header -->
   <header>
-    <div class="wordmark">
-      <span class="wordmark-top">Est. 2026</span>
-      <span class="wordmark-main">Walker <span>Intelligence Group</span></span>
+    <div class="header-left">
+      <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="navOverlay">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="wordmark">
+        <span class="wordmark-top">Est. 2026</span>
+        <span class="wordmark-main">Walker <span>Intelligence Group</span></span>
+      </div>
     </div>
     <img src="wig-logo.png" alt="Walker Intelligence Group" class="header-logo" />
   </header>
 
   <!-- Hero -->
   <main>
-    <div class="eyebrow">
-      <div class="eyebrow-line"></div>
-      <span class="eyebrow-text">Currently Launching</span>
-    </div>
-
     <h1 class="hero-headline">
       Bringing clarity<br>and confidence<br>into the <em>AI era.</em>
     </h1>
@@ -395,40 +985,215 @@
     </p>
 
     <div class="services">
-      <div class="service-item">
+      <button class="service-item" data-modal="modal-01" aria-haspopup="dialog">
         <span class="service-num">01</span>
         <div class="service-label">Discovery &amp;<br>Strategy</div>
         <div class="service-sub">Organizational Readiness</div>
-      </div>
-      <div class="service-item">
+        <div class="service-hint">Learn more +</div>
+      </button>
+      <button class="service-item" data-modal="modal-02" aria-haspopup="dialog">
         <span class="service-num">02</span>
         <div class="service-label">Technology<br>Assessment</div>
-        <div class="service-sub">Stack &amp; Architecture Review</div>
-      </div>
-      <div class="service-item">
+        <div class="service-sub">Architecture Review</div>
+        <div class="service-hint">Learn more +</div>
+      </button>
+      <button class="service-item" data-modal="modal-03" aria-haspopup="dialog">
         <span class="service-num">03</span>
-        <div class="service-label">Implementation<br>Advisory</div>
-        <div class="service-sub">Deployment &amp; Integration</div>
-      </div>
-      <div class="service-item">
-        <span class="service-num">04</span>
-        <div class="service-label">Executive<br>Education</div>
-        <div class="service-sub">Leadership Briefings</div>
-      </div>
+        <div class="service-label">Implementation<br>&amp; Delivery</div>
+        <div class="service-sub">Build &amp; Deployment</div>
+        <div class="service-hint">Learn more +</div>
+      </button>
     </div>
 
-    <!-- Large decorative numeral -->
+    <!-- Large decorative letter -->
     <div class="deco-numeral" aria-hidden="true">W</div>
   </main>
 
+  <!-- Service Modals -->
+  <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+
+    <div class="modal" id="modal-01" role="dialog" aria-modal="true" aria-labelledby="modal-01-title">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <span class="modal-num">01</span>
+      <h2 class="modal-title" id="modal-01-title">Discovery &amp; Strategy</h2>
+      <p class="modal-sub">Organizational Readiness</p>
+      <p class="modal-desc">Before you can move forward with AI or new technology, you need to know where you actually stand. We begin every engagement with a structured discovery process that gives your leadership team a clear, honest picture of your organization's current capabilities, gaps, and opportunities.</p>
+      <ul class="modal-list">
+        <li>Stakeholder interviews across leadership and key teams</li>
+        <li>Audit of existing tools, workflows, and data practices</li>
+        <li>Identification of high-impact opportunities for AI and automation</li>
+        <li>A prioritized roadmap with clear next steps and realistic timelines</li>
+      </ul>
+    </div>
+
+    <div class="modal" id="modal-02" role="dialog" aria-modal="true" aria-labelledby="modal-02-title">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <span class="modal-num">02</span>
+      <h2 class="modal-title" id="modal-02-title">Technology Assessment</h2>
+      <p class="modal-sub">Architecture Review</p>
+      <p class="modal-desc">Most organizations are running on a mix of tools that were never designed to work together. We conduct a thorough review of your technology environment to identify what's working, what's creating risk, and where smarter infrastructure can unlock real efficiency.</p>
+      <ul class="modal-list">
+        <li>Inventory and evaluation of your current technology stack</li>
+        <li>Security posture review and risk identification</li>
+        <li>Assessment of integration gaps and redundant systems</li>
+        <li>Recommendations tailored to your scale, budget, and goals</li>
+      </ul>
+    </div>
+
+    <div class="modal" id="modal-03" role="dialog" aria-modal="true" aria-labelledby="modal-03-title">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <span class="modal-num">03</span>
+      <h2 class="modal-title" id="modal-03-title">Implementation &amp; Delivery</h2>
+      <p class="modal-sub">Build &amp; Deployment</p>
+      <p class="modal-desc">We don't hand you a plan and walk away. We build, deploy, and host the solution ourselves so you get a finished product that works, not a stack of recommendations to hand off to someone else.</p>
+      <ul class="modal-list">
+        <li>Full build and deployment of AI tools, automations, and custom applications</li>
+        <li>Hosting, monitoring, and infrastructure management included</li>
+        <li>Integration with your existing systems and workflows</li>
+        <li>Ongoing maintenance and support so the solution keeps performing</li>
+      </ul>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer>
-    <div class="footer-contact">
-      <a href="mailto:dustin@walkerig.com">dustin@walkerig.com</a>
-    </div>
     <div>&copy; 2026 Walker Intelligence Group</div>
   </footer>
 
 </div>
+
+<script>
+  const overlay   = document.getElementById('navOverlay');
+  const backdrop  = document.getElementById('navBackdrop');
+  const hamburger = document.getElementById('hamburger');
+  const tabs      = document.querySelectorAll('.nav-tab');
+  const panels    = document.querySelectorAll('.nav-panel');
+
+  function openNav() {
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    hamburger.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeNav() {
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', () => {
+    overlay.classList.contains('open') ? closeNav() : openNav();
+  });
+
+  backdrop.addEventListener('click', closeNav);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeNav();
+  });
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('panel-' + tab.dataset.panel).classList.add('active');
+    });
+  });
+
+  // Service modals
+  const modalOverlay  = document.getElementById('modalOverlay');
+  const modalBackdrop = document.getElementById('modalBackdrop');
+  let activeModal = null;
+
+  function openModal(id) {
+    if (activeModal) activeModal.classList.remove('active');
+    activeModal = document.getElementById(id);
+    activeModal.classList.add('active');
+    modalOverlay.classList.add('open');
+    modalOverlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    activeModal.querySelector('.modal-close').focus();
+  }
+
+  function closeModal() {
+    if (!activeModal) return;
+    modalOverlay.classList.remove('open');
+    modalOverlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      if (activeModal) activeModal.classList.remove('active');
+      activeModal = null;
+    }, 350);
+  }
+
+  document.querySelectorAll('.service-item[data-modal]').forEach(btn => {
+    btn.addEventListener('click', () => openModal(btn.dataset.modal));
+  });
+
+  document.querySelectorAll('.modal-close').forEach(btn => {
+    btn.addEventListener('click', closeModal);
+  });
+
+  modalBackdrop.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && activeModal) closeModal();
+  });
+
+  // Services accordion
+  document.querySelectorAll('.svc-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const body = btn.nextElementSibling;
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !isOpen);
+      body.classList.toggle('open', !isOpen);
+    });
+  });
+
+  // Contact form - submits via FormSubmit.co (free, no account needed)
+  // On first submission, FormSubmit sends a verification email to dustin@walkerig.com - click it once to activate.
+  const form       = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    formStatus.textContent = '';
+    formStatus.className = 'form-status';
+
+    const data = new FormData(form);
+    data.append('_subject', 'New inquiry from walkerig.com');
+    data.append('_captcha', 'false');
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/dustin@walkerig.com', {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' }
+      });
+      if (res.ok) {
+        formStatus.textContent = 'Message sent. We\'ll be in touch.';
+        formStatus.className = 'form-status success';
+        form.reset();
+      } else {
+        throw new Error();
+      }
+    } catch {
+      formStatus.textContent = 'Something went wrong. Please email us directly.';
+      formStatus.className = 'form-status error';
+    } finally {
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+    }
+  });
+</script>
+
 </body>
 </html>
