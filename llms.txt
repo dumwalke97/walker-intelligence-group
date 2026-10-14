@@ -1,6 +1,6 @@
 # Walker Intelligence Group
 
-> Walker Intelligence Group is an AI and technology consulting firm based in Indianapolis, Indiana, founded in 2026 by Dustin Walker. It helps small and mid-sized organizations adopt AI and modern technology practically: assessing where they stand, building a clear plan, and then building, deploying, and hosting the solution.
+> Walker Intelligence Group is an AI consulting and implementation firm based in Indianapolis, Indiana, founded in 2026 by Dustin Walker. It helps small and mid-sized organizations adopt AI and modern technology practically: assessing where they stand, building a clear plan, and then building, deploying, and hosting the solution.
 
 ## Services
 
