@@ -3,3 +3,6 @@ https://walkerintelligencegroup.com/*      https://walkerig.com/:splat  301!
 https://www.walkerintelligencegroup.com/*  https://walkerig.com/:splat  301!
 http://walkerintelligencegroup.com/*       https://walkerig.com/:splat  301!
 http://www.walkerintelligencegroup.com/*   https://walkerig.com/:splat  301!
+
+# Keep the page generator script off the public site
+/tools/*  /404  404!
