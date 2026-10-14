@@ -492,8 +492,7 @@ def header(current=""):
     <a href="/insights/"{cur('insights')}>Insights</a>
     <a href="/about/"{cur('about')}>About</a>
     <a href="/contact/"{cur('contact')}>Contact</a>
-    <a class="btn" href="/contact/">Free consult</a>
-  </nav>
+{'' if current == 'contact' else '    <a class="btn" href="/contact/">Free consult</a>' + chr(10)}  </nav>
   <details class="menu">
     <summary>Menu</summary>
     <div class="menu-panel">
@@ -537,7 +536,6 @@ def footer_html():
     </div>
     <div class="footer-base">
       <span>&copy; 2026 Walker Intelligence Group<span class="sep" aria-hidden="true">&middot;</span><a href="/privacy/">Privacy Policy</a></span>
-      <a class="btn footer-btn" href="/contact/">Free 30-minute consult</a>
     </div>
   </div>
 </footer>
@@ -657,10 +655,6 @@ def service_page(s):
       <span class="eyebrow">{esc(s['name'])}</span>
       <h1>{s['h1']}</h1>
       <p class="lede">{esc(s['lede'])}</p>
-      <div class="cta-row">
-        <a class="btn" href="/contact/">{CONSULT}</a>
-        <span class="cta-note">Or call {PHONE_DISPLAY}</span>
-      </div>
     </div>
   </section>
 
