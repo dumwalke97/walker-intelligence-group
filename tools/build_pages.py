@@ -48,7 +48,7 @@ SERVICES = [
         "slug": "ai-integration",
         "name": "AI Integration",
         "title": "AI Integration Services in Indianapolis | Walker IG",
-        "desc": "We find where AI saves your team time, then build and run the tools: document review, data extraction, summaries, and private AI assistants. Indianapolis.",
+        "desc": "We find where AI saves your team time, then build and run the tools: document review, data extraction, summaries, and private AI assistants.",
         "h1": "AI integration that does <em>real work</em> for your team.",
         "lede": "We find the places where AI actually saves time in your business, then build the tools, connect them to your systems, and keep them running. No demos that go nowhere.",
         "card": "Put AI to work on documents, email, and repetitive knowledge work.",
@@ -80,7 +80,7 @@ SERVICES = [
         "slug": "workflow-automation",
         "name": "Workflow Automation",
         "title": "Workflow Automation for Indianapolis Businesses | Walker IG",
-        "desc": "Stop paying people to do what software can handle. We automate data entry, reporting, follow-ups, and handoffs between your tools. Indianapolis based.",
+        "desc": "Stop paying people to do what software can handle. We automate data entry, reporting, follow-ups, and handoffs between your tools.",
         "h1": "Workflow automation that gives your team <em>hours back</em>.",
         "lede": "Data entry, copy and paste between systems, chasing approvals, building the same report every week. We automate the repetitive work so your people can focus on the work that needs them.",
         "card": "Automate data entry, reporting, routing, and follow-ups.",
@@ -112,7 +112,7 @@ SERVICES = [
         "slug": "websites-custom-apps",
         "name": "Websites & Custom Apps",
         "title": "Websites & Custom Apps in Indianapolis | Walker IG",
-        "desc": "Fast websites that generate leads, plus client portals, online forms, dashboards, and custom tools built around your process. Built and hosted in Indianapolis.",
+        "desc": "Fast websites that generate leads, plus client portals, online forms, dashboards, and custom tools built around your process. Designed, built, and hosted for you.",
         "h1": "Websites and custom apps that <em>work for your business</em>.",
         "lede": "A website that brings in leads, and custom tools built around the way you actually work. We design it, build it, host it, and keep it updated.",
         "card": "Lead-generating websites, portals, dashboards, and custom tools.",
@@ -144,7 +144,7 @@ SERVICES = [
         "slug": "ai-advisory",
         "name": "AI Advisory",
         "title": "AI Strategy & Advisory in Indianapolis | Walker IG",
-        "desc": "Cut through the AI hype. Get a plain-English assessment, the highest-ROI AI opportunities, and a clear plan. Then we help you build it. Indianapolis.",
+        "desc": "Cut through the AI hype. Get a plain-English assessment, the highest-ROI AI opportunities, and a clear plan. Then we help you build it.",
         "h1": "AI strategy in <em>plain English</em>.",
         "lede": "Cut through the hype and get a clear plan that makes sense for your business. We assess where you are, show you where AI pays off, and then help you build it.",
         "card": "A clear, practical AI plan for your leadership team.",
@@ -210,7 +210,7 @@ SERVICES = [
         "slug": "cost-optimization",
         "name": "Cost Optimization",
         "title": "Technology Cost Optimization in Indianapolis | Walker IG",
-        "desc": "Cut technology waste. We audit subscriptions, remove redundant tools, right-size cloud spend, and replace manual work with automation. Indianapolis.",
+        "desc": "Cut technology waste. We audit subscriptions, remove redundant tools, right-size cloud spend, and replace manual work with automation.",
         "h1": "Spend less on technology. <em>Get more from it.</em>",
         "lede": "We find the software you are paying for and not using, the overlapping tools, and the manual work that automation can replace. Then we help you cut it.",
         "card": "Cut software waste, right-size cloud spend, automate manual work.",
@@ -514,35 +514,31 @@ def footer_html():
     svc = "\n".join(f'          <li><a href="/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in SERVICES)
     return f"""<footer class="site-footer">
   <div class="wrap">
-    <div class="footer-cols">
-      <div>
-        <h4>Walker Intelligence Group</h4>
-        <ul>
-          <li>AI consulting &amp; implementation</li>
-          <li>Indianapolis, IN</li>
-          <li><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a></li>
-          <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
-        </ul>
-        <a class="btn footer-cta" href="/contact/">Free 30-minute consult</a>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="footer-name" href="/">Walker <span>Intelligence Group</span></a>
+        <p>AI consulting &amp; implementation</p>
+        <p class="footer-contact"><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a><span aria-hidden="true">&middot;</span><a href="mailto:{EMAIL}">{EMAIL}</a></p>
       </div>
-      <div>
+      <nav aria-label="Services">
         <h4>Services</h4>
-        <ul>
+        <ul class="footer-two-col">
 {svc}
         </ul>
-      </div>
-      <div>
+      </nav>
+      <nav aria-label="Company">
         <h4>Company</h4>
         <ul>
-          <li><a href="/">Home</a></li>
           <li><a href="/insights/">Insights</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="/contact/">Contact</a></li>
-          <li><a href="/privacy/">Privacy Policy</a></li>
         </ul>
-      </div>
+      </nav>
     </div>
-    <div class="footer-base">&copy; 2026 Walker Intelligence Group &middot; Indianapolis, Indiana</div>
+    <div class="footer-base">
+      <span>&copy; 2026 Walker Intelligence Group<span class="sep" aria-hidden="true">&middot;</span><a href="/privacy/">Privacy Policy</a></span>
+      <a class="btn footer-btn" href="/contact/">Free 30-minute consult</a>
+    </div>
   </div>
 </footer>
 """
@@ -658,7 +654,7 @@ def service_page(s):
 
   <section class="hero">
     <div class="wrap">
-      <span class="eyebrow">{esc(s['name'])} &middot; Indianapolis</span>
+      <span class="eyebrow">{esc(s['name'])}</span>
       <h1>{s['h1']}</h1>
       <p class="lede">{esc(s['lede'])}</p>
       <div class="cta-row">
@@ -746,7 +742,7 @@ def about_page():
 
   <section class="hero">
     <div class="wrap">
-      <span class="eyebrow">About &middot; Indianapolis</span>
+      <span class="eyebrow">About</span>
       <h1>A partner who plans it <em>and builds it</em>.</h1>
       <p class="lede">Walker Intelligence Group is an AI consulting and implementation firm based in Indianapolis. We help organizations figure out where AI and modern technology fit, then we build, deploy, and support the solution.</p>
     </div>
@@ -761,7 +757,7 @@ def about_page():
       <ul class="checks">
         <li>25+ years in technology implementation, administration, and leadership</li>
         <li>Degree in Computer and Information Technology, Purdue University</li>
-        <li>Based in Indianapolis, working with small and mid-sized businesses</li>
+        <li>Focused on small and mid-sized businesses</li>
       </ul>
     </div>
   </section>
@@ -815,7 +811,7 @@ def contact_page():
   <section class="hero">
     <div class="wrap contact-grid">
       <div>
-        <span class="eyebrow">Free consult &middot; Indianapolis</span>
+        <span class="eyebrow">Free consult</span>
         <h1>Let's find where AI <em>pays off</em> for you.</h1>
         <p class="lede">Book a free 30-minute consult. Tell us what is slowing your team down and we will share practical ideas, whether or not you hire us.</p>
         <div class="contact-lines">
@@ -1083,7 +1079,7 @@ def insights_index():
 
   <section class="hero">
     <div class="wrap">
-      <span class="eyebrow">Insights &middot; Indianapolis</span>
+      <span class="eyebrow">Insights</span>
       <h1>Practical AI, <em>in plain English</em>.</h1>
       <p class="lede">Short, honest guides for small and mid-sized businesses on AI, automation, and technology. What it costs, where it helps, and how to get started.</p>
     </div>
