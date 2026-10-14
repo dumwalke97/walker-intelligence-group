@@ -3,6 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Analytics 4 + lead tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ7RK3Y0N4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJ7RK3Y0N4');
+    // A form submission returns here with ?sent=1 (read before page scripts strip it)
+    if (new URLSearchParams(location.search).get('sent') === '1') {
+      gtag('event', 'generate_lead', { form_location: location.pathname });
+    }
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href');
+      if (href.indexOf('tel:') === 0) gtag('event', 'phone_click', { link_text: a.textContent.trim() });
+      else if (href.indexOf('mailto:') === 0) gtag('event', 'email_click', { link_text: a.textContent.trim() });
+      else if (href === '/contact/') gtag('event', 'consult_click', { link_text: a.textContent.trim() });
+    });
+  </script>
   <title>Workflow Automation for Indianapolis Businesses | Walker IG</title>
   <meta name="description" content="Stop paying people to do what software can handle. We automate data entry, reporting, follow-ups, and handoffs between your tools. Indianapolis based." />
   <link rel="canonical" href="https://walkerig.com/workflow-automation/" />
@@ -226,6 +246,7 @@
           <li><a href="/">Home</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
         </ul>
       </div>
     </div>

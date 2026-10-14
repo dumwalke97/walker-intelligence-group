@@ -18,6 +18,28 @@ TODAY = date.today().isoformat()
 FONTS = ("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;"
          "1,300;1,400&family=DM+Mono:wght@300;400&display=swap")
 CONSULT = "Book a free 30-minute consult"
+GA_ID = "G-RJ7RK3Y0N4"  # Google Analytics 4, Walker Intelligence Group property
+ANALYTICS = """  <!-- Google Analytics 4 + lead tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    gtag('config', '{GA_ID}');
+    // A form submission returns here with ?sent=1 (read before page scripts strip it)
+    if (new URLSearchParams(location.search).get('sent') === '1') {{
+      gtag('event', 'generate_lead', {{ form_location: location.pathname }});
+    }}
+    document.addEventListener('click', function (e) {{
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href');
+      if (href.indexOf('tel:') === 0) gtag('event', 'phone_click', {{ link_text: a.textContent.trim() }});
+      else if (href.indexOf('mailto:') === 0) gtag('event', 'email_click', {{ link_text: a.textContent.trim() }});
+      else if (href === '/contact/') gtag('event', 'consult_click', {{ link_text: a.textContent.trim() }});
+    }});
+  </script>
+""".format(GA_ID=GA_ID)
 
 # ── SERVICE CONTENT ──────────────────────────────────────────────────────────
 SERVICES = [
@@ -242,7 +264,7 @@ def head(title, desc, path, schema):
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{esc(title)}</title>
+{ANALYTICS}  <title>{esc(title)}</title>
   <meta name="description" content="{esc(desc)}" />
   <link rel="canonical" href="{url}" />
   <meta name="theme-color" content="#0b0c0e" />
@@ -326,6 +348,7 @@ def footer():
           <li><a href="/">Home</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
         </ul>
       </div>
     </div>
@@ -645,8 +668,67 @@ def contact_page():
                      desc, path, schema) + body + footer())
 
 
+def privacy_page():
+    path = "/privacy/"
+    desc = "How Walker Intelligence Group collects, uses, and protects information on walkerig.com, including contact forms and Google Analytics."
+    schema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {"@type": "WebPage", "@id": SITE + path, "url": SITE + path,
+             "name": "Privacy Policy", "about": PROVIDER},
+            breadcrumb_schema([("Home", "/"), ("Privacy Policy", path)]),
+        ],
+    }
+    body = f"""{header()}
+<main>
+  <div class="wrap crumbs"><a href="/">Home</a> / Privacy Policy</div>
+
+  <section class="hero">
+    <div class="wrap prose">
+      <span class="eyebrow">Effective October 14, 2026</span>
+      <h1>Privacy policy</h1>
+      <p>Walker Intelligence Group ("we", "us") runs walkerig.com. This page explains what information we collect on this website, how we use it, and the choices you have. We keep it short and in plain English.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap prose">
+      <h2>Information you give us</h2>
+      <p>When you fill out a contact form, we collect what you enter, such as your name, email, phone number, company, and message. Forms are delivered to our email by FormSubmit, a third-party form service. We use this information only to respond to you and to provide the services you ask about.</p>
+      <p>When you email or call us, we keep that correspondence so we can follow up and serve you.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap prose">
+      <h2>Analytics and cookies</h2>
+      <p>We use Google Analytics to understand how visitors use this site, for example which pages are viewed, how people found us, and whether a contact form was completed. Google Analytics uses cookies and collects information such as your browser type, device, approximate location, and pages visited. It does not give us your name or contact details.</p>
+      <p>You can learn how Google uses this data at <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">policies.google.com/technologies/partner-sites</a>, and you can opt out with the <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">Google Analytics opt-out browser add-on</a>. You can also block or delete cookies in your browser settings.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap prose">
+      <h2>How we share information</h2>
+      <p>We do not sell or rent your personal information. We share it only with service providers that help us run this website and our business, such as our website host, form service, and analytics provider, or when required by law.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap prose">
+      <h2>Your choices</h2>
+      <p>You can ask us to see, correct, or delete the personal information you have sent us. Just email <a href="mailto:{EMAIL}">{EMAIL}</a> or call <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>.</p>
+      <p>This website is meant for businesses and is not directed at children under 13.</p>
+      <p>If we change this policy, we will update the effective date at the top of this page.</p>
+    </div>
+  </section>
+</main>
+"""
+    write(path, head("Privacy Policy | Walker Intelligence Group", desc, path, schema) + body + footer())
+
+
 def sitemap():
-    urls = ["/"] + [f"/{s['slug']}/" for s in SERVICES] + ["/about/", "/contact/"]
+    urls = ["/"] + [f"/{s['slug']}/" for s in SERVICES] + ["/about/", "/contact/", "/privacy/"]
     entries = "\n".join(
         f"  <url>\n    <loc>{SITE}{u}</loc>\n    <lastmod>{TODAY}</lastmod>\n  </url>" for u in urls)
     (ROOT / "sitemap.xml").write_text(
@@ -661,4 +743,5 @@ if __name__ == "__main__":
         service_page(s)
     about_page()
     contact_page()
+    privacy_page()
     sitemap()
