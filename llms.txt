@@ -28,6 +28,13 @@
 - [About](https://walkerig.com/about/)
 - [Contact / free 30-minute consult](https://walkerig.com/contact/)
 
+## Insights
+
+- [Insights index](https://walkerig.com/insights/): plain-English guides on AI and automation for small and mid-sized businesses.
+- [How to choose an AI consultant in Indianapolis: 8 questions to ask](https://walkerig.com/insights/how-to-choose-an-ai-consultant-indianapolis/)
+- [How much does AI cost for a small business? A plain-English guide](https://walkerig.com/insights/how-much-does-ai-cost-small-business/)
+- [Indiana's IN AI initiative: what small businesses should know](https://walkerig.com/insights/indiana-in-ai-initiative-small-business/)
+
 ## Contact
 
 - Website: https://walkerig.com/
