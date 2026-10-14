@@ -1,0 +1,25 @@
+# Walker Intelligence Group
+
+> Walker Intelligence Group is an AI and technology consulting firm based in Indianapolis, Indiana, founded in 2026 by Dustin Walker. It helps small and mid-sized organizations adopt AI and modern technology practically: assessing where they stand, building a clear plan, and then building, deploying, and hosting the solution.
+
+## Services
+
+- Workflow Automation: automate repetitive data entry, reporting, routing, and follow-ups; connect tools that don't talk to each other.
+- Websites & Custom Apps: lead-generating websites, online forms, client portals, dashboards, and custom tools, with ongoing hosting and support.
+- AI Integration: document review, summarization, and extraction; AI-powered internal tools; safe implementation where client data stays private.
+- Technology Infrastructure: cloud setup, backups, storage, security assessment, and technology audits.
+- AI Advisory: plain-English technology assessments, highest-ROI AI opportunities, and tool recommendations based on data sensitivity.
+- Cost Optimization: audit software subscriptions, remove redundant tools, right-size cloud spend.
+
+## How engagements work
+
+1. Discovery & Strategy: stakeholder interviews, audit of tools and workflows, prioritized roadmap.
+2. Technology Assessment: review of the current stack, security posture, and integration gaps.
+3. Implementation & Delivery: full build, deployment, hosting, and ongoing maintenance.
+
+## Contact
+
+- Website: https://walkerig.com/
+- Email: dustin@walkerig.com
+- Phone: +1 317-531-7681
+- Location: Indianapolis, IN, USA

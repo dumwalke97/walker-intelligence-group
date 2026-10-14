@@ -3,9 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Walker Intelligence Group</title>
-  <meta name="description" content="AI and technology consulting for organizations navigating the intelligence era." />
+  <title>AI Consulting in Indianapolis | Walker Intelligence Group</title>
+  <meta name="description" content="Indianapolis AI consulting, workflow automation, custom apps, and IT strategy for small and mid-sized businesses. Practical AI that saves time and cuts costs." />
+  <link rel="canonical" href="https://walkerig.com/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#0b0c0e" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Walker Intelligence Group" />
+  <meta property="og:title" content="AI Consulting in Indianapolis | Walker Intelligence Group" />
+  <meta property="og:description" content="Practical AI, workflow automation, and technology strategy for Indianapolis businesses. Clear plans, real builds, no hype." />
+  <meta property="og:url" content="https://walkerig.com/" />
+  <meta property="og:image" content="https://walkerig.com/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Walker Intelligence Group logo" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Consulting in Indianapolis | Walker Intelligence Group" />
+  <meta name="twitter:description" content="Practical AI, workflow automation, and technology strategy for Indianapolis businesses." />
+  <meta name="twitter:image" content="https://walkerig.com/og-image.jpg" />
+
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="wig-logo-144.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://walkerig.com/#business",
+        "name": "Walker Intelligence Group",
+        "alternateName": "WIG",
+        "url": "https://walkerig.com/",
+        "logo": "https://walkerig.com/wig-logo-144.png",
+        "image": "https://walkerig.com/og-image.jpg",
+        "description": "AI and technology consulting firm in Indianapolis offering AI advisory, AI integration, workflow automation, websites and custom apps, technology infrastructure, and IT cost optimization.",
+        "email": "dustin@walkerig.com",
+        "telephone": "+1-317-531-7681",
+        "foundingDate": "2026",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Indianapolis",
+          "addressRegion": "IN",
+          "addressCountry": "US"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Indianapolis" },
+          { "@type": "State", "name": "Indiana" }
+        ],
+        "founder": { "@id": "https://walkerig.com/#founder" },
+        "knowsAbout": ["Artificial intelligence", "Workflow automation", "AI integration", "Custom software development", "Cloud infrastructure", "IT cost optimization"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Workflow Automation" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Websites & Custom Apps" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Integration" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Technology Infrastructure" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Advisory" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cost Optimization" } }
+          ]
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://walkerig.com/#founder",
+        "name": "Dustin Walker",
+        "jobTitle": "Founder",
+        "email": "dustin@walkerig.com",
+        "worksFor": { "@id": "https://walkerig.com/#business" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://walkerig.com/#website",
+        "url": "https://walkerig.com/",
+        "name": "Walker Intelligence Group",
+        "publisher": { "@id": "https://walkerig.com/#business" }
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
@@ -430,6 +510,16 @@
       animation: fadeUp 1s .8s cubic-bezier(.16,1,.3,1) both;
     }
 
+    footer div:not(:first-child)::before,
+    .footer-link::before { content: '·'; margin-right: 1rem; color: var(--rule); }
+    .footer-link { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-link:hover { color: var(--gold-lt); }
+
+    @media (max-width: 560px) {
+      footer div:not(:first-child)::before,
+      .footer-link::before { content: none; }
+    }
+
     /* ── NAV OVERLAY ── */
     .nav-overlay {
       position: fixed;
@@ -530,7 +620,7 @@
     .nav-panel.active { display: block; }
 
     /* About panel */
-    .nav-panel h2 {
+    .nav-panel .nav-heading {
       font-size: clamp(1.6rem, 4vw, 2.2rem);
       font-weight: 300;
       letter-spacing: 0.02em;
@@ -538,7 +628,7 @@
       line-height: 1.2;
     }
 
-    .nav-panel h2 em { font-style: italic; color: var(--gold-lt); }
+    .nav-panel .nav-heading em { font-style: italic; color: var(--gold-lt); }
 
     .nav-panel p {
       font-size: 1rem;
@@ -867,7 +957,7 @@
 
       <!-- About -->
       <div class="nav-panel active" id="panel-about" role="tabpanel">
-        <h2>Navigating the <em>AI era</em> together.</h2>
+        <p class="nav-heading">Navigating the <em>AI era</em> together.</p>
         <p>Walker Intelligence Group is an AI and technology consulting firm built for organizations that need more than a vendor. They need a trusted partner who can translate the complexity of artificial intelligence and technology solutions into clear strategy and measurable outcomes.</p>
         <p>We work with leadership teams and business stakeholders to assess where they are, define where they need to go, and build a credible path to get there, without the hype.</p>
         <p>Founded in 2026 and based in Indianapolis, we bring the clarity and confidence your organization needs to move forward with purpose in an era of rapid change.</p>
@@ -985,6 +1075,7 @@
           <input type="hidden" name="_subject" value="New inquiry from walkerig.com" />
           <input type="hidden" name="_next" value="https://walkerig.com?sent=1" />
           <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="field">
             <label for="cf-name">Name</label>
             <input type="text" id="cf-name" name="name" placeholder="Your name" required />
@@ -1020,7 +1111,10 @@
         <span class="wordmark-main">Walker <span>Intelligence Group</span></span>
       </div>
     </div>
-    <img src="wig-logo.png" alt="Walker Intelligence Group" class="header-logo" />
+    <picture>
+      <source srcset="wig-logo-144.webp" type="image/webp" />
+      <img src="wig-logo-144.png" alt="Walker Intelligence Group logo" class="header-logo" width="221" height="144" fetchpriority="high" />
+    </picture>
   </header>
 
   <!-- Hero -->
@@ -1030,7 +1124,7 @@
     </h1>
 
     <p class="hero-body">
-      Walker Intelligence Group partners with organizations to navigate the AI era with clarity and confidence, translating emerging technology into strategy, capability, and competitive advantage.
+      Walker Intelligence Group is an Indianapolis AI and technology consulting firm. We partner with organizations to navigate the AI era with clarity and confidence, translating emerging technology into strategy, capability, and competitive advantage.
     </p>
 
     <div class="services">
@@ -1108,6 +1202,9 @@
   <!-- Footer -->
   <footer>
     <div>&copy; 2026 Walker Intelligence Group</div>
+    <div>Indianapolis, IN</div>
+    <a href="tel:+13175317681" class="footer-link">317-531-7681</a>
+    <a href="mailto:dustin@walkerig.com" class="footer-link">dustin@walkerig.com</a>
   </footer>
 
 </div>
