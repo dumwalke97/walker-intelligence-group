@@ -74,7 +74,7 @@ SERVICES = [
             ("How long does an AI project take?", "Most first projects take a few weeks from kickoff to something your team is using. We start small, prove the value, and then expand."),
             ("What if AI is not a good fit for us?", "Then we will tell you. Sometimes simple automation solves the problem better and for less money."),
         ],
-        "related": ["workflow-automation", "ai-advisory", "websites-custom-apps"],
+        "related": ["workflow-automation", "technology-strategy", "websites-custom-apps"],
     },
     {
         "slug": "workflow-automation",
@@ -141,37 +141,37 @@ SERVICES = [
         "related": ["workflow-automation", "ai-integration", "technology-infrastructure"],
     },
     {
-        "slug": "ai-advisory",
-        "name": "AI Advisory",
-        "title": "AI Strategy & Advisory in Indianapolis | Walker IG",
-        "desc": "Cut through the AI hype. Get a plain-English assessment, the highest-ROI AI opportunities, and a clear plan. Then we help you build it.",
-        "h1": "AI strategy in <em>plain English</em>.",
-        "lede": "Cut through the hype and get a clear plan that makes sense for your business. We assess where you are, show you where AI pays off, and then help you build it.",
-        "card": "A clear, practical AI plan for your leadership team.",
+        "slug": "technology-strategy",
+        "name": "Technology Strategy",
+        "title": "Technology Strategy & Consulting in Indianapolis | Walker IG",
+        "desc": "A plain-English review of your technology, a ranked list of the improvements worth making, and a clear plan your leadership team can act on. Then we build it.",
+        "h1": "A technology plan that makes <em>sense for you</em>.",
+        "lede": "New tools, automation, cloud, AI. There is no shortage of options. We help you sort out what is worth doing, in what order, and then we help you build it.",
+        "card": "A clear, practical technology plan for your leadership team.",
         "problem": [
-            "Leadership teams are being told they need an AI strategy, usually by people selling something. It is hard to know what is real, what is safe, and what is worth the money.",
-            "We give you an honest outside view. We look at your operations, your data, and your goals, and tell you where AI will make a measurable difference and where it will not. Then, unlike most advisors, we can build what we recommend.",
+            "Most leadership teams know their technology could work better, but it is hard to know where to start. Every vendor has a pitch, every tool promises to change everything, and it is tough to tell what is real, what is safe, and what is worth the money.",
+            "We give you an honest outside view. We look at your operations, your systems, and your goals, and tell you which improvements will make a measurable difference, whether that is better software, automation, stronger security, or AI. Then, unlike most advisors, we can build what we recommend.",
         ],
         "offer": [
-            ("Technology and readiness assessment", "A plain-English review of your current tools, data, and processes, and how ready they are for AI."),
-            ("Opportunity mapping", "A short list of AI and automation opportunities ranked by return, cost, and risk."),
-            ("Tool and vendor guidance", "Recommendations based on your data sensitivity and budget, so you do not overpay or put data at risk."),
-            ("AI policy and guardrails", "Simple rules for how your team can use AI safely, so adoption does not create new risk."),
-            ("Ongoing advisory", "A trusted partner to check in with as the technology changes, without a full-time hire."),
+            ("Technology assessment", "A plain-English review of your current tools, systems, data, and processes: what works, what is at risk, and what is holding you back."),
+            ("Opportunity roadmap", "A short list of improvements ranked by return, cost, and risk, from quick wins to bigger projects."),
+            ("Tool and vendor guidance", "Recommendations that fit your budget and data sensitivity, so you do not overpay or lock yourself into the wrong platform."),
+            ("Innovation and AI readiness", "Where newer tools like AI genuinely fit, with simple guardrails so your team can use them safely."),
+            ("Ongoing advisory", "A trusted partner to check in with as your business and the technology change, without a full-time hire."),
         ],
         "examples": [
-            "A leadership workshop that ends with a prioritized AI roadmap",
-            "A review of AI tools your team is already using, with a safe-use policy",
-            "A second opinion on a vendor proposal before you sign",
-            "Quarterly check-ins to adjust the plan as tools and costs change",
+            "A leadership workshop that ends with a prioritized technology roadmap",
+            "A second opinion on a software or vendor proposal before you sign",
+            "A plan to modernize aging systems without disrupting daily work",
+            "A safe-use policy for the AI tools your team is already trying",
         ],
         "faq": [
             ("What do we get at the end?", "A written roadmap with prioritized opportunities, expected impact, rough costs, and clear next steps. Not a slide deck full of buzzwords."),
-            ("Do you only advise, or do you build too?", "Both. We are an AI consulting and implementation firm. You can take the plan and run with it, or have us build it."),
-            ("Are you tied to any AI vendor?", "No. We recommend what fits your needs and data, not what pays us a commission."),
+            ("Do you only advise, or do you build too?", "Both. We are a technology consulting and implementation firm. You can take the plan and run with it, or have us build it."),
+            ("Are you tied to any software vendor?", "No. We recommend what fits your needs and data, not what pays us a commission."),
             ("Is this only for large companies?", "No. Most of our work is with small and mid-sized organizations that need practical answers, not an enterprise program."),
         ],
-        "related": ["ai-integration", "cost-optimization", "technology-infrastructure"],
+        "related": ["technology-infrastructure", "workflow-automation", "cost-optimization"],
     },
     {
         "slug": "technology-infrastructure",
@@ -179,11 +179,11 @@ SERVICES = [
         "title": "IT Infrastructure & Cloud Setup, Indianapolis | Walker IG",
         "desc": "Cloud setup, tested backups, security assessments, and technology audits for Indianapolis businesses. Know what you have, what is at risk, and fix it.",
         "h1": "A secure foundation your business <em>can rely on</em>.",
-        "lede": "Cloud setup, backups, security, and a clear picture of what you have. We organize your technology so it is safe, reliable, and ready to grow, including for AI.",
+        "lede": "Cloud setup, backups, security, and a clear picture of what you have. We organize your technology so it is safe, reliable, and ready to grow.",
         "card": "Cloud setup, backups, security, and technology audits.",
         "problem": [
             "Many businesses run on technology that grew one decision at a time. Shared passwords, files in three places, no tested backups, and nobody sure what is still being paid for. It works until it does not.",
-            "We take inventory, close the obvious risks, and set up a clean, documented foundation. It is also the step that makes AI and automation safe to add later.",
+            "We take inventory, close the obvious risks, and set up a clean, documented foundation. It is also the step that makes new tools, automation, and AI safe to add later.",
         ],
         "offer": [
             ("Technology audit", "A full inventory of your systems, accounts, devices, and subscriptions, with a plain list of what is at risk."),
@@ -196,15 +196,15 @@ SERVICES = [
             "Moving a team off a local file server and onto organized cloud storage",
             "Setting up multi-factor login and a password manager for the whole team",
             "Tested backups for key systems with a simple recovery plan",
-            "A technology audit before a merger, new hire wave, or AI project",
+            "A technology audit before a merger, new hire wave, or big software change",
         ],
         "faq": [
             ("Are you a managed IT provider?", "We focus on getting your foundation right and supporting the systems we set up. For day-to-day help desk needs, we can work alongside your existing IT provider."),
             ("How do we know if we are at risk?", "Start with an audit. Most businesses find a few high-risk gaps that are quick and inexpensive to fix."),
-            ("Do we need this before doing AI?", "Often, yes. AI is only as safe as the data and access rules behind it. A solid foundation makes AI projects faster and safer."),
+            ("Do we need this before adding new technology?", "Often, yes. New software, automation, and AI are only as safe as the data and access rules behind them. A solid foundation makes every project faster and safer."),
             ("Can you work with Microsoft 365 or Google Workspace?", "Yes. We work with both and help you get far more out of the one you already pay for."),
         ],
-        "related": ["cost-optimization", "ai-advisory", "workflow-automation"],
+        "related": ["cost-optimization", "technology-strategy", "workflow-automation"],
     },
     {
         "slug": "cost-optimization",
@@ -223,7 +223,7 @@ SERVICES = [
             ("Tool consolidation", "Replace overlapping tools with fewer, better ones, and cancel what is not pulling its weight."),
             ("Cloud right-sizing", "Match your cloud and hosting spend to what you actually need."),
             ("Automation for savings", "Replace labor-intensive manual processes with automation that pays for itself."),
-            ("ROI-ranked investment plan", "When you do spend, put money into the AI and technology investments with the fastest return."),
+            ("ROI-ranked investment plan", "When you do spend, put money into the technology investments with the fastest return."),
         ],
         "examples": [
             "Finding unused licenses and duplicate tools across departments",
@@ -235,11 +235,14 @@ SERVICES = [
             ("How much can we save?", "It depends on your setup, so we will not promise a number upfront. The audit gives you a specific list of savings before you commit to any changes."),
             ("Will cutting tools disrupt our team?", "We plan changes carefully, move data for you, and help your team switch over so work keeps moving."),
             ("Is this a one-time project?", "The audit is one-time. Many clients have us review costs once or twice a year as their needs change."),
-            ("Can savings fund an AI project?", "Often, yes. Cutting waste is a common way to pay for the first automation or AI project without a new budget line."),
+            ("Can savings fund new projects?", "Often, yes. Cutting waste is a common way to pay for a first automation or modernization project without a new budget line."),
         ],
-        "related": ["technology-infrastructure", "workflow-automation", "ai-advisory"],
+        "related": ["technology-infrastructure", "workflow-automation", "technology-strategy"],
     },
 ]
+SERVICE_ORDER = ["workflow-automation", "websites-custom-apps", "technology-infrastructure",
+                 "technology-strategy", "ai-integration", "cost-optimization"]
+SERVICES.sort(key=lambda s: SERVICE_ORDER.index(s["slug"]))
 BY_SLUG = {s["slug"]: s for s in SERVICES}
 
 PROCESS = [
@@ -261,13 +264,13 @@ ARTICLES = [
         "card": "Eight questions that separate a useful AI partner from an expensive slide deck.",
         "published": "2026-10-14",
         "modified": "2026-10-14",
-        "service": "ai-advisory",
+        "service": "technology-strategy",
         "sections": [
             ("Why the choice matters", """
-        <p>Search for AI consulting in Indianapolis and you will find a mix of local shops, national agencies with a page for every city, and software vendors who call their sales team consultants. They all promise to help you use AI. They do not all mean the same thing.</p>
+        <p>Search for AI consulting in Indianapolis and you will find a mix of local shops, national agencies with a page for every city, and software vendors who call their sales team consultants. They all promise to help you use AI. They do not all mean the same thing. The best partner looks at your technology as a whole, because AI only works when the systems around it do.</p>
         <p>For a small or mid-sized business, the wrong fit is costly. You can spend months on workshops and strategy documents and end up with nothing your team actually uses. The questions below are the ones we would ask if we were in your seat.</p>"""),
             ("1. Will you build it, or just recommend it?", """
-        <p>This is the most important question. Some firms stop at advice. They hand you a roadmap and leave you to find someone else to build it. That handoff is where many AI projects stall.</p>
+        <p>This is the most important question. Some firms stop at advice. They hand you a roadmap and leave you to find someone else to build it. That handoff is where many technology projects stall.</p>
         <p>Ask whether the firm will also set up the tools, connect them to your systems, and keep them running. If they only advise, ask who they expect to do the build and what that will cost.</p>"""),
             ("2. Can we start with one small project?", """
         <p>A good partner should be happy to start small. Pick one process that eats up time, fix it, and measure the result. If it works, you expand. If it does not, you have learned something without betting the budget.</p>
@@ -285,7 +288,7 @@ ARTICLES = [
             ("5. Who will actually do the work?", """
         <p>The person who sells the project is not always the person who delivers it. Ask who will be on your project day to day, what their background is, and whether you can talk to them before you start.</p>"""),
             ("6. What happens after launch?", """
-        <p>AI tools and automations need care. Software updates, a vendor changes its pricing, or a process changes on your side. Ask who hosts what gets built, who fixes it when something breaks, and who owns the accounts and the code. You should own your data and your systems, even if someone else maintains them.</p>"""),
+        <p>Any new system needs care, whether it is an AI tool, an automation, or a custom app. Software updates, a vendor changes its pricing, or a process changes on your side. Ask who hosts what gets built, who fixes it when something breaks, and who owns the accounts and the code. You should own your data and your systems, even if someone else maintains them.</p>"""),
             ("7. How will we know it worked?", """
         <p>Before any work starts, agree on what success looks like. Good measures are simple: hours saved each week, faster turnaround for customers, fewer errors, or work that no longer needs a person to touch it. If a consultant cannot tell you how they will measure results, they probably will not.</p>"""),
             ("8. Will you tell us when AI is not the answer?", """
@@ -298,9 +301,9 @@ ARTICLES = [
           <li>No plan for support once the project is live</li>
         </ul>"""),
             ("Does it matter if the consultant is local?", """
-        <p>Not always. A lot of AI work can be done remotely. But a partner in the Indianapolis area can sit down with your team, see how work really moves through your business, and be there in person when it matters. It also helps to work with someone who knows the local business community and resources like Indiana's <a href="/insights/indiana-in-ai-initiative-small-business/">IN AI initiative</a>.</p>"""),
+        <p>Not always. A lot of technology work can be done remotely. But a partner in the Indianapolis area can sit down with your team, see how work really moves through your business, and be there in person when it matters. It also helps to work with someone who knows the local business community and resources like Indiana's <a href="/insights/indiana-in-ai-initiative-small-business/">IN AI initiative</a>.</p>"""),
             ("How we answer these questions", """
-        <p>Walker Intelligence Group is an AI consulting and implementation firm in Indianapolis. We plan the work with you, then build it, host it, and keep it running. We like to start with one focused project that proves its value. We choose tools based on how sensitive your data is, we are not tied to any AI vendor, and we will tell you when AI is not the right fit.</p>
+        <p>Walker Intelligence Group is a technology consulting and implementation firm in Indianapolis, and AI is one of the tools we use. We plan the work with you, then build it, host it, and keep it running. We like to start with one focused project that proves its value. We choose tools based on how sensitive your data is, we are not tied to any software vendor, and we will tell you when AI is not the right fit.</p>
         <p>If you want to see how that works for your business, <a href="/contact/">book a free 30-minute consult</a>. Bring these eight questions. We are happy to answer them.</p>"""),
         ],
         "faq": [
@@ -344,7 +347,7 @@ ARTICLES = [
         <p>The price of the software is rarely the whole picture. Plan for these too:</p>
         <ul>
           <li><strong>Your team's time.</strong> Someone needs to explain the process, test the results, and learn the new way of working.</li>
-          <li><strong>Data cleanup.</strong> AI works best when your information is organized. Messy files and duplicate records slow everything down.</li>
+          <li><strong>Data cleanup.</strong> AI, like any new system, works best when your information is organized. Messy files and duplicate records slow everything down.</li>
           <li><strong>Security setup.</strong> Access controls, business-grade accounts, and the right privacy settings.</li>
           <li><strong>Maintenance.</strong> Tools change. Someone has to keep things running and fix what breaks.</li>
           <li><strong>Usage fees.</strong> Some AI services charge by how much you use them. Ask how costs grow if your volume doubles.</li>
@@ -365,8 +368,10 @@ ARTICLES = [
           <li><strong>Cut waste to fund it.</strong> Unused subscriptions and duplicate tools can often pay for a first project. See <a href="/cost-optimization/">cost optimization</a>.</li>
           <li><strong>Look for free local help.</strong> Indiana's <a href="/insights/indiana-in-ai-initiative-small-business/">IN AI initiative</a> offers workshops and a readiness assessment.</li>
         </ul>"""),
+            ("AI is one option, not the only one", """
+        <p>Sometimes the right answer is not AI at all. A simple automation, better use of software you already own, or cleaning up how information moves between your systems can deliver the same savings for less money and less risk. Start with the problem, then pick the tool. AI earns its place when the work involves reading, writing, or judgment that simpler automation cannot handle.</p>"""),
             ("Get a real number for your business", """
-        <p>General ranges only go so far. The fastest way to get a real number is to talk through one specific problem. In a <a href="/contact/">free 30-minute consult</a>, we will look at what is slowing your team down, tell you which level of AI makes sense, and give you an honest idea of cost. Then, if you want, we build it, host it, and support it. See our <a href="/ai-integration/">AI integration</a> services for what that looks like.</p>"""),
+        <p>General ranges only go so far. The fastest way to get a real number is to talk through one specific problem. In a <a href="/contact/">free 30-minute consult</a>, we will look at what is slowing your team down, tell you whether AI, automation, or a simpler fix makes the most sense, and give you an honest idea of cost. Then, if you want, we build it, host it, and support it. See our <a href="/ai-integration/">AI integration</a> services for what that looks like.</p>"""),
         ],
         "faq": [
             ("Is ChatGPT enough for a small business?", "It is a good place to start for writing and research. It will not connect to your systems or run processes on its own. When you want AI to do work automatically, you need an automation or a custom tool."),
@@ -384,7 +389,7 @@ ARTICLES = [
         "card": "What the state's AI program offers, what it does not, and how to use it.",
         "published": "2026-10-14",
         "modified": "2026-10-14",
-        "service": "ai-advisory",
+        "service": "technology-strategy",
         "sections": [
             ("What IN AI is", """
         <p>IN AI is a statewide initiative to help Indiana employers put AI to work. Governor Mike Braun announced it at a press conference on April 28, 2026. It is led by the CEOs of the Indiana Corporate Partnership (CICP), working with the governor's administration. The stated goal is for Indiana to become the most AI-ready state in the nation, and state leaders have said they want to reach one million Hoosiers.</p>
@@ -412,8 +417,8 @@ ARTICLES = [
           <li><strong>Find someone to build it.</strong> Workshops teach. They do not set up the tools, connect them to your systems, or keep them running. That is where an implementation partner comes in.</li>
         </ul>"""),
             ("Where we fit", """
-        <p>Walker Intelligence Group is an AI consulting and implementation firm based in Indianapolis. We think IN AI is a good thing for Indiana businesses, and we are glad to see the state take AI seriously for small and mid-sized employers.</p>
-        <p>Our job is the next step. Once you have an idea of where AI could help, we help you pick the right first project, then build it, host it, and support it. If you have been to an IN AI event and want help turning what you learned into something your team uses every day, <a href="/contact/">book a free 30-minute consult</a>. You can also read <a href="/insights/how-much-does-ai-cost-small-business/">what AI costs for a small business</a> or <a href="/insights/how-to-choose-an-ai-consultant-indianapolis/">how to choose an AI consultant</a>.</p>"""),
+        <p>Walker Intelligence Group is a technology consulting and implementation firm based in Indianapolis, and AI is part of what we do. We think IN AI is a good thing for Indiana businesses, and we are glad to see the state take AI seriously for small and mid-sized employers.</p>
+        <p>Our job is the next step. Once you have an idea of where AI could help, we help you pick the right first project, whether that turns out to be AI, automation, or a simpler technology fix, then build it, host it, and support it. If you have been to an IN AI event and want help turning what you learned into something your team uses every day, <a href="/contact/">book a free 30-minute consult</a>. You can also read <a href="/insights/how-much-does-ai-cost-small-business/">what AI costs for a small business</a> or <a href="/insights/how-to-choose-an-ai-consultant-indianapolis/">how to choose an AI consultant</a>.</p>"""),
             ("Sources", """
         <ul>
           <li><a href="https://www.cicpindiana.com/ai/" rel="noopener">IN AI hub, Indiana Corporate Partnership</a></li>
@@ -484,7 +489,7 @@ def header(current=""):
         f'        <a href="/{s["slug"]}/">{esc(s["name"])}</a>' for s in SERVICES)
     return f"""<header class="site-header">
   <a class="brand" href="/" aria-label="Walker Intelligence Group home">
-    <span class="brand-top">AI Consulting &amp; Implementation</span>
+    <span class="brand-top">Technology Consulting &amp; Implementation</span>
     <span class="brand-main">Walker <span>Intelligence Group</span></span>
   </a>
   <nav class="site-nav" aria-label="Main">
@@ -516,7 +521,7 @@ def footer_html():
     <div class="footer-grid">
       <div class="footer-brand">
         <a class="footer-name" href="/">Walker <span>Intelligence Group</span></a>
-        <p>AI consulting &amp; implementation</p>
+        <p>Technology consulting &amp; implementation</p>
         <p class="footer-contact"><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a><span aria-hidden="true">&middot;</span><a href="mailto:{EMAIL}">{EMAIL}</a></p>
       </div>
       <nav aria-label="Services">
@@ -557,7 +562,7 @@ def sync_homepage_footer():
 
 
 def cta_band(heading="Let's talk about <em>your</em> business.",
-             text="Tell us what is slowing your team down. In a free 30-minute call, we will point out where AI and automation can help and what it would take. No pressure and no jargon."):
+             text="Tell us what is slowing your team down. In a free 30-minute call, we will point out where better technology can help and what it would take. No pressure and no jargon."):
     return f"""  <section class="cta-band">
     <div class="wrap">
       <h2>{heading}</h2>
@@ -718,7 +723,7 @@ def service_page(s):
 
 def about_page():
     path = "/about/"
-    desc = ("Indianapolis AI consulting and implementation firm founded by Dustin Walker, a Purdue-trained "
+    desc = ("Indianapolis technology consulting and implementation firm founded by Dustin Walker, a Purdue-trained "
             "technology leader with 25+ years of experience.")
     schema = {
         "@context": "https://schema.org",
@@ -738,7 +743,7 @@ def about_page():
     <div class="wrap">
       <span class="eyebrow">About</span>
       <h1>A partner who plans it <em>and builds it</em>.</h1>
-      <p class="lede">Walker Intelligence Group is an AI consulting and implementation firm based in Indianapolis. We help organizations figure out where AI and modern technology fit, then we build, deploy, and support the solution.</p>
+      <p class="lede">Walker Intelligence Group is a technology consulting and implementation firm based in Indianapolis. We help organizations figure out where modern technology, automation, and AI fit, then we build, deploy, and support the solution.</p>
     </div>
   </section>
 
@@ -747,7 +752,7 @@ def about_page():
       <h2>Meet the founder</h2>
       <p>Walker Intelligence Group was founded in 2026 by Dustin Walker, a technology leader with more than 25 years of experience implementing, administering, and leading technology for organizations. Over that career he has worked hands-on across many roles and many generations of technology, from running the systems businesses depend on every day to leading the teams and projects that put new ones in place.</p>
       <p>Dustin holds a degree in Computer and Information Technology from Purdue University. That combination of formal training and decades of real-world delivery is why WIG can both advise and build. He has seen plenty of technology waves come and go, and he knows the difference between hype and tools that actually change how a business runs.</p>
-      <p>He started Walker Intelligence Group because he is passionate about helping small and medium-sized businesses see what is possible with AI and technology innovation. Large companies have whole departments for this. Most growing businesses do not. WIG gives them a senior, hands-on partner who explains things in plain English and then gets the work done.</p>
+      <p>He started Walker Intelligence Group because he is passionate about helping small and medium-sized businesses see what is possible with technology and innovation, including AI. Large companies have whole departments for this. Most growing businesses do not. WIG gives them a senior, hands-on partner who explains things in plain English and then gets the work done.</p>
       <ul class="checks">
         <li>25+ years in technology implementation, administration, and leadership</li>
         <li>Degree in Computer and Information Technology, Purdue University</li>
@@ -760,9 +765,9 @@ def about_page():
     <div class="wrap">
       <h2>What we <em>believe</em></h2>
       <div class="grid">
-        <div class="card"><h3>Plain English, no hype</h3><p>You should understand what you are buying and why. We explain things clearly and tell you when AI is not the answer.</p></div>
+        <div class="card"><h3>Plain English, no hype</h3><p>You should understand what you are buying and why. We explain things clearly and tell you when new technology is not the answer.</p></div>
         <div class="card"><h3>Build, don't just advise</h3><p>A plan only matters if it gets done. We build, launch, host, and support what we recommend.</p></div>
-        <div class="card"><h3>Your data stays yours</h3><p>We choose tools and settings based on how sensitive your information is, and we keep it out of public AI training.</p></div>
+        <div class="card"><h3>Your data stays yours</h3><p>We choose tools and settings based on how sensitive your information is, and we keep it out of public AI training and third-party hands.</p></div>
         <div class="card"><h3>Start small, prove value</h3><p>We begin with a focused project that pays off quickly, then grow from there.</p></div>
       </div>
     </div>
@@ -781,13 +786,13 @@ def about_page():
 
 {cta_band()}</main>
 """
-    write(path, head("About Walker Intelligence Group | Indianapolis AI Firm",
+    write(path, head("About Walker Intelligence Group | Indianapolis Technology Firm",
                      desc, path, schema) + body + footer())
 
 
 def contact_page():
     path = "/contact/"
-    desc = ("Book a free 30-minute consult with an Indianapolis AI consulting and implementation firm. "
+    desc = ("Book a free 30-minute consult with an Indianapolis technology consulting and implementation firm. "
             f"Call {PHONE_DISPLAY} or send a message. We reply within one business day.")
     schema = {
         "@context": "https://schema.org",
@@ -806,7 +811,7 @@ def contact_page():
     <div class="wrap contact-grid">
       <div>
         <span class="eyebrow">Free consult</span>
-        <h1>Let's find where AI <em>pays off</em> for you.</h1>
+        <h1>Let's find where technology <em>pays off</em> for you.</h1>
         <p class="lede">Book a free 30-minute consult. Tell us what is slowing your team down and we will share practical ideas, whether or not you hire us.</p>
         <div class="contact-lines">
           <a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
@@ -868,7 +873,7 @@ def contact_page():
   }}
 </script>
 """
-    write(path, head("Free AI Consult in Indianapolis | Contact Walker IG",
+    write(path, head("Free Technology Consult in Indianapolis | Contact Walker IG",
                      desc, path, schema) + body + footer())
 
 
@@ -1016,7 +1021,7 @@ def article_page(a):
     <section>
       <div class="wrap prose author-box">
         <span class="eyebrow">About the author</span>
-        <p><a href="/about/">Dustin Walker</a> founded Walker Intelligence Group, an AI consulting and implementation firm in Indianapolis. He has more than 25 years of experience in technology implementation, administration, and leadership, and a degree in Computer and Information Technology from Purdue University. He is passionate about helping small and medium-sized businesses put AI to work.</p>
+        <p><a href="/about/">Dustin Walker</a> founded Walker Intelligence Group, a technology consulting and implementation firm in Indianapolis. He has more than 25 years of experience in technology implementation, administration, and leadership, and a degree in Computer and Information Technology from Purdue University. He is passionate about helping small and medium-sized businesses put AI to work.</p>
       </div>
     </section>
   </article>
@@ -1038,7 +1043,7 @@ def article_page(a):
 def insights_index():
     path = "/insights/"
     url = SITE + path
-    desc = ("Plain-English guides on AI, automation, and technology for Indianapolis small and mid-sized "
+    desc = ("Plain-English guides on technology, automation, and AI for Indianapolis small and mid-sized "
             "businesses, from Walker Intelligence Group.")
     schema = {
         "@context": "https://schema.org",
@@ -1074,8 +1079,8 @@ def insights_index():
   <section class="hero">
     <div class="wrap">
       <span class="eyebrow">Insights</span>
-      <h1>Practical AI, <em>in plain English</em>.</h1>
-      <p class="lede">Short, honest guides for small and mid-sized businesses on AI, automation, and technology. What it costs, where it helps, and how to get started.</p>
+      <h1>Practical technology, <em>in plain English</em>.</h1>
+      <p class="lede">Short, honest guides for small and mid-sized businesses on technology, automation, and AI. What it costs, where it helps, and how to get started.</p>
     </div>
   </section>
 
@@ -1090,7 +1095,7 @@ def insights_index():
 
 {cta_band()}</main>
 """
-    write(path, head("Insights: AI and Automation for Small Business | Walker IG",
+    write(path, head("Insights: Technology & AI for Small Business | Walker IG",
                      desc, path, schema) + body + footer())
 
 

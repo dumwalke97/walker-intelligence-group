@@ -396,5 +396,7 @@ a.card:hover h3 { color: var(--gold-lt); }
   .cta-row .btn { width: 100%; }
   .card { padding: 1.6rem 1.3rem; }
   .btn-lg { font-size: 1.15rem; padding: 1rem 1.4rem; }
-  .brand-top { font-size: 0.6rem; letter-spacing: 0.18em; white-space: nowrap; }
+  .brand-top { font-size: 0.55rem; letter-spacing: 0.08em; white-space: nowrap; }
+  .site-header { gap: 0.75rem; }
+  .menu summary { padding: 0.5rem 0.85rem; }
 }
