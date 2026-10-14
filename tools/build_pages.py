@@ -510,7 +510,7 @@ def header(current=""):
 """
 
 
-def footer():
+def footer_html():
     svc = "\n".join(f'          <li><a href="/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in SERVICES)
     return f"""<footer class="site-footer">
   <div class="wrap">
@@ -523,6 +523,7 @@ def footer():
           <li><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a></li>
           <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
         </ul>
+        <a class="btn footer-cta" href="/contact/">Free 30-minute consult</a>
       </div>
       <div>
         <h4>Services</h4>
@@ -544,9 +545,21 @@ def footer():
     <div class="footer-base">&copy; 2026 Walker Intelligence Group &middot; Indianapolis, Indiana</div>
   </div>
 </footer>
-</body>
-</html>
 """
+
+
+def footer():
+    return footer_html() + "</body>\n</html>\n"
+
+
+def sync_homepage_footer():
+    """The homepage is hand-written; keep its footer identical to the generated pages."""
+    home = ROOT / "index.html"
+    h = home.read_text()
+    start, end = "<!-- SHARED-FOOTER:START -->", "<!-- SHARED-FOOTER:END -->"
+    a, b = h.index(start) + len(start), h.index(end)
+    home.write_text(h[:a] + "\n" + footer_html() + h[b:])
+    print("synced footer into index.html")
 
 
 def cta_band(heading="Let's talk about <em>your</em> business.",
@@ -1114,4 +1127,5 @@ if __name__ == "__main__":
     for a in ARTICLES:
         article_page(a)
     insights_index()
+    sync_homepage_footer()
     sitemap()
