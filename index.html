@@ -338,6 +338,7 @@
       cursor: pointer;
       background: rgba(245,242,236,0.025);
       border: 1px solid var(--rule);
+      border-radius: 14px;
       padding: 1.8rem 1.7rem;
       display: flex;
       flex-direction: column;
@@ -412,6 +413,7 @@
       position: relative;
       background: #0f1012;
       border: 1px solid var(--rule);
+      border-radius: 16px;
       max-width: 540px;
       width: 100%;
       padding: 3rem;
@@ -580,6 +582,7 @@
     .svc-link {
       background: rgba(245,242,236,0.025);
       border: 1px solid var(--rule);
+      border-radius: 14px;
       padding: 2rem 1.8rem;
       text-decoration: none;
       color: var(--paper);
@@ -910,7 +913,7 @@
       padding: 0.7rem 0.9rem;
       outline: none;
       transition: border-color 0.2s;
-      border-radius: 0;
+      border-radius: 10px;
       -webkit-appearance: none;
       transform: translateZ(0);
     }
@@ -926,22 +929,22 @@
     }
 
     .contact-form button[type="submit"] {
-      background: none;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 999px;
+      color: #15130f;
+      background: linear-gradient(135deg, #e0c58e 0%, #c8a86a 55%, #b8975a 100%);
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 0.85rem 2rem;
       cursor: pointer;
-      transition: background 0.2s, color 0.2s;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       width: 100%;
     }
 
     .contact-form button[type="submit"]:hover {
-      background: var(--gold);
-      color: var(--ink);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 28px -10px rgba(212,184,122,0.7);
     }
 
     .form-status {
