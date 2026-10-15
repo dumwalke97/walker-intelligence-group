@@ -16,8 +16,8 @@ PHONE_DISPLAY = "317-531-7681"
 PHONE_TEL = "+13175317681"
 EMAIL = "dustin@walkerig.com"
 TODAY = date.today().isoformat()
-FONTS = ("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;"
-         "1,300;1,400&family=DM+Mono:wght@300;400&display=swap")
+FONTS = ("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600"
+         "&family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap")
 CONSULT = "Book a free 30-minute consult"
 GA_ID = "G-RJ7RK3Y0N4"  # Google Analytics 4, Walker Intelligence Group property
 ANALYTICS = """  <!-- Google Analytics 4 + lead tracking -->
@@ -458,7 +458,7 @@ def head(title, desc, path, schema, og_type="website", extra_meta=""):
 {ANALYTICS}  <title>{esc(title)}</title>
   <meta name="description" content="{esc(desc)}" />
   <link rel="canonical" href="{url}" />
-  <meta name="theme-color" content="#0b0c0e" />
+  <meta name="theme-color" content="#0e0f11" />
   <meta property="og:type" content="{og_type}" />
 {extra_meta}  <meta property="og:site_name" content="Walker Intelligence Group" />
   <meta property="og:title" content="{esc(title)}" />
@@ -474,6 +474,7 @@ def head(title, desc, path, schema, og_type="website", extra_meta=""):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="{FONTS}" rel="stylesheet" />
   <link href="/assets/site.css" rel="stylesheet" />
+  <script src="/assets/site.js" defer></script>
   <script type="application/ld+json">
 {json.dumps(schema, indent=2, ensure_ascii=False)}
   </script>
@@ -482,36 +483,75 @@ def head(title, desc, path, schema, og_type="website", extra_meta=""):
 """
 
 
+CHEVRON = ('<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5 6 8.5 10 4.5" fill="none" '
+           'stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+
+
 def header(current=""):
     def cur(p):
         return ' aria-current="page"' if p == current else ""
-    svc_links = "\n".join(
-        f'        <a href="/{s["slug"]}/">{esc(s["name"])}</a>' for s in SERVICES)
+    mega = "\n".join(
+        f'              <li><a href="/{s["slug"]}/"><strong>{esc(s["name"])}</strong><span>{esc(s["card"])}</span></a></li>'
+        for s in SERVICES)
+    mobile_svc = "\n".join(f'      <li><a href="/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in SERVICES)
+    consult = '' if current == 'contact' else '    <a class="btn btn-sm" href="/contact/">Free consult</a>\n'
+    services_cur = ' aria-current="page"' if current == 'services' else ''
     return f"""<header class="site-header">
-  <a class="brand" href="/" aria-label="Walker Intelligence Group home">
-    <span class="brand-top">Technology Consulting &amp; Implementation</span>
-    <span class="brand-main">Walker <span>Intelligence Group</span></span>
-  </a>
-  <nav class="site-nav" aria-label="Main">
-    <a href="/#services"{cur('services')}>Services</a>
-    <a href="/insights/"{cur('insights')}>Insights</a>
-    <a href="/about/"{cur('about')}>About</a>
-    <a href="/contact/"{cur('contact')}>Contact</a>
-{'' if current == 'contact' else '    <a class="btn" href="/contact/">Free consult</a>' + chr(10)}  </nav>
-  <details class="menu">
-    <summary>Menu</summary>
-    <div class="menu-panel">
-      <span class="menu-label">Services</span>
-{svc_links}
-      <span class="menu-label">Company</span>
-      <a href="/insights/">Insights</a>
-      <a href="/about/">About</a>
-      <a href="/contact/">Contact</a>
-      <a href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a>
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="Walker Intelligence Group home"><span class="brand-main">Walker <span>Intelligence Group</span></span></a>
+    <nav class="primary-nav" aria-label="Main">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <button class="nav-link nav-trigger" type="button" aria-expanded="false" aria-controls="mega-services"{services_cur}>Services {CHEVRON}</button>
+          <div class="mega" id="mega-services">
+            <div class="mega-inner">
+              <div>
+                <p class="mega-kicker">Services</p>
+                <p class="mega-title">We plan it, build it, and keep it running.</p>
+                <a class="text-link" href="/#services">All services</a>
+              </div>
+              <ul class="mega-grid">
+{mega}
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="/#approach">How we work</a></li>
+        <li class="nav-item"><a class="nav-link" href="/insights/"{cur('insights')}>Insights</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about/"{cur('about')}>About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact/"{cur('contact')}>Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="header-phone" href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
+{consult}      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
-  </details>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <span class="mobile-label">Services</span>
+    <ul>
+{mobile_svc}
+    </ul>
+    <span class="mobile-label">Company</span>
+    <ul>
+      <li><a href="/#approach">How we work</a></li>
+      <li><a href="/insights/">Insights</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+    <div class="mobile-cta">
+      <a class="btn" href="/contact/">{CONSULT}</a>
+    </div>
+    <div class="mobile-contact"><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a><a href="mailto:{EMAIL}">{EMAIL}</a></div>
+  </div>
 </header>
 """
+
+
+def crumbs(*items):
+    parts = [f'<a href="{href}">{esc(name)}</a>' if href else f'<span aria-current="page">{esc(name)}</span>'
+             for name, href in items]
+    return '<nav class="crumbs" aria-label="Breadcrumb">' + '<span class="sep" aria-hidden="true">/</span>'.join(parts) + '</nav>'
 
 
 def footer_html():
@@ -519,10 +559,13 @@ def footer_html():
     return f"""<footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="footer-name" href="/">Walker <span>Intelligence Group</span></a>
-        <p>Technology consulting &amp; implementation</p>
-        <p class="footer-contact"><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a><span aria-hidden="true">&middot;</span><a href="mailto:{EMAIL}">{EMAIL}</a></p>
+      <div class="footer-connect">
+        <h4>Let's connect</h4>
+        <ul>
+          <li><a href="/contact/">Book a free consult</a></li>
+          <li><a href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a></li>
+          <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
+        </ul>
       </div>
       <nav aria-label="Services">
         <h4>Services</h4>
@@ -533,6 +576,7 @@ def footer_html():
       <nav aria-label="Company">
         <h4>Company</h4>
         <ul>
+          <li><a href="/#approach">How we work</a></li>
           <li><a href="/insights/">Insights</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="/contact/">Contact</a></li>
@@ -540,7 +584,8 @@ def footer_html():
       </nav>
     </div>
     <div class="footer-base">
-      <span>&copy; 2026 Walker Intelligence Group<span class="sep" aria-hidden="true">&middot;</span><a href="/privacy/">Privacy Policy</a></span>
+      <a class="footer-name" href="/">Walker <span>Intelligence Group</span></a>
+      <span>Technology consulting &amp; implementation<span class="sep" aria-hidden="true">&middot;</span>&copy; 2026<span class="sep" aria-hidden="true">&middot;</span><a href="/privacy/">Privacy Policy</a></span>
     </div>
   </div>
 </footer>
@@ -551,14 +596,14 @@ def footer():
     return footer_html() + "</body>\n</html>\n"
 
 
-def sync_homepage_footer():
-    """The homepage is hand-written; keep its footer identical to the generated pages."""
+def sync_homepage(marker, content):
+    """The homepage is hand-written; keep its shared header and footer identical to the generated pages."""
     home = ROOT / "index.html"
     h = home.read_text()
-    start, end = "<!-- SHARED-FOOTER:START -->", "<!-- SHARED-FOOTER:END -->"
+    start, end = f"<!-- SHARED-{marker}:START -->", f"<!-- SHARED-{marker}:END -->"
     a, b = h.index(start) + len(start), h.index(end)
-    home.write_text(h[:a] + "\n" + footer_html() + h[b:])
-    print("synced footer into index.html")
+    home.write_text(h[:a] + "\n" + content + h[b:])
+    print(f"synced {marker.lower()} into index.html")
 
 
 def cta_band(heading="Let's talk about <em>your</em> business.",
@@ -637,7 +682,7 @@ def service_page(s):
         f"        <details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>" for q, a in s["faq"])
     related = "\n".join(
         f'        <a class="card" href="/{r}/"><h3>{esc(BY_SLUG[r]["name"])}</h3>'
-        f'<p>{esc(BY_SLUG[r]["card"])}</p><span class="more">Learn more &rarr;</span></a>'
+        f'<p>{esc(BY_SLUG[r]["card"])}</p><span class="more">Learn more</span></a>'
         for r in s["related"])
     guides = [a for a in ARTICLES if a["service"] == s["slug"]]
     insights = "" if not guides else """  <section>
@@ -646,17 +691,16 @@ def service_page(s):
       <div class="grid">
 """ + "\n".join(
         f'        <a class="card" href="/insights/{a["slug"]}/"><h3>{strip_tags(a["h1"])}</h3>'
-        f'<p>{esc(a["card"])}</p><span class="more">Read &rarr;</span></a>' for a in guides) + """
+        f'<p>{esc(a["card"])}</p><span class="more">Read</span></a>' for a in guides) + """
       </div>
     </div>
   </section>
 """
     body = f"""{header('services')}
 <main>
-  <div class="wrap crumbs"><a href="/">Home</a> / <a href="/#services">Services</a> / {esc(s['name'])}</div>
-
   <section class="hero">
     <div class="wrap">
+      {crumbs(('Home', '/'), ('Services', '/#services'), (s['name'], None))}
       <span class="eyebrow">{esc(s['name'])}</span>
       <h1>{s['h1']}</h1>
       <p class="lede">{esc(s['lede'])}</p>
@@ -737,10 +781,9 @@ def about_page():
     }
     body = f"""{header('about')}
 <main>
-  <div class="wrap crumbs"><a href="/">Home</a> / About</div>
-
   <section class="hero">
     <div class="wrap">
+      {crumbs(('Home', '/'), ('About', None))}
       <span class="eyebrow">About</span>
       <h1>A partner who plans it <em>and builds it</em>.</h1>
       <p class="lede">Walker Intelligence Group is a technology consulting and implementation firm based in Indianapolis. We help organizations figure out where modern technology, automation, and AI fit, then we build, deploy, and support the solution.</p>
@@ -805,9 +848,10 @@ def contact_page():
     options = "\n".join(f'              <option>{esc(s["name"])}</option>' for s in SERVICES)
     body = f"""{header('contact')}
 <main>
-  <div class="wrap crumbs"><a href="/">Home</a> / Contact</div>
-
   <section class="hero">
+    <div class="wrap">
+      {crumbs(('Home', '/'), ('Contact', None))}
+    </div>
     <div class="wrap contact-grid">
       <div>
         <span class="eyebrow">Free consult</span>
@@ -890,10 +934,9 @@ def privacy_page():
     }
     body = f"""{header()}
 <main>
-  <div class="wrap crumbs"><a href="/">Home</a> / Privacy Policy</div>
-
   <section class="hero">
     <div class="wrap prose">
+      {crumbs(('Home', '/'), ('Privacy Policy', None))}
       <span class="eyebrow">Effective October 14, 2026</span>
       <h1>Privacy policy</h1>
       <p>Walker Intelligence Group ("we", "us") runs walkerig.com. This page explains what information we collect on this website, how we use it, and the choices you have. We keep it short and in plain English.</p>
@@ -982,20 +1025,19 @@ def article_page(a):
         f"        <details><summary>{esc(q)}</summary><p>{esc(ans)}</p></details>" for q, ans in a["faq"])
     related = [
         f'        <a class="card" href="/{svc["slug"]}/"><span class="num">Service</span><h3>{esc(svc["name"])}</h3>'
-        f'<p>{esc(svc["card"])}</p><span class="more">Learn more &rarr;</span></a>'
+        f'<p>{esc(svc["card"])}</p><span class="more">Learn more</span></a>'
     ] + [
         f'        <a class="card" href="/insights/{r}/"><span class="num">Insight</span>'
         f'<h3>{strip_tags(ARTICLE_BY_SLUG[r]["h1"])}</h3><p>{esc(ARTICLE_BY_SLUG[r]["card"])}</p>'
-        f'<span class="more">Read &rarr;</span></a>'
+        f'<span class="more">Read</span></a>'
         for r in a["related_articles"]
     ]
     body = f"""{header('insights')}
 <main>
-  <div class="wrap crumbs"><a href="/">Home</a> / <a href="/insights/">Insights</a> / {strip_tags(a['h1'])}</div>
-
   <article>
     <section class="hero">
       <div class="wrap">
+        {crumbs(('Home', '/'), ('Insights', '/insights/'), (strip_tags(a['h1']), None))}
         <span class="eyebrow">Insights &middot; {esc(svc['name'])}</span>
         <h1 class="article-title">{a['h1']}</h1>
         <p class="lede">{esc(a['lede'])}</p>
@@ -1070,14 +1112,13 @@ def insights_index():
     cards = "\n".join(
         f'        <a class="card" href="/insights/{a["slug"]}/"><span class="num">{long_date(a["published"])} &middot; '
         f'{esc(BY_SLUG[a["service"]]["name"])}</span><h3>{strip_tags(a["h1"])}</h3><p>{esc(a["card"])}</p>'
-        f'<span class="more">Read &rarr;</span></a>'
+        f'<span class="more">Read</span></a>'
         for a in ARTICLES)
     body = f"""{header('insights')}
 <main>
-  <div class="wrap crumbs"><a href="/">Home</a> / Insights</div>
-
   <section class="hero">
     <div class="wrap">
+      {crumbs(('Home', '/'), ('Insights', None))}
       <span class="eyebrow">Insights</span>
       <h1>Practical technology, <em>in plain English</em>.</h1>
       <p class="lede">Short, honest guides for small and mid-sized businesses on technology, automation, and AI. What it costs, where it helps, and how to get started.</p>
@@ -1122,5 +1163,6 @@ if __name__ == "__main__":
     for a in ARTICLES:
         article_page(a)
     insights_index()
-    sync_homepage_footer()
+    sync_homepage("HEADER", header())
+    sync_homepage("FOOTER", footer_html())
     sitemap()

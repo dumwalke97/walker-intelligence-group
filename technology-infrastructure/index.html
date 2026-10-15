@@ -26,7 +26,7 @@
   <title>IT Infrastructure &amp; Cloud Setup, Indianapolis | Walker IG</title>
   <meta name="description" content="Cloud setup, tested backups, security assessments, and technology audits for Indianapolis businesses. Know what you have, what is at risk, and fix it." />
   <link rel="canonical" href="https://walkerig.com/technology-infrastructure/" />
-  <meta name="theme-color" content="#0b0c0e" />
+  <meta name="theme-color" content="#0e0f11" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Walker Intelligence Group" />
   <meta property="og:title" content="IT Infrastructure &amp; Cloud Setup, Indianapolis | Walker IG" />
@@ -40,8 +40,9 @@
   <link rel="apple-touch-icon" href="/wig-logo-144.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
   <link href="/assets/site.css" rel="stylesheet" />
+  <script src="/assets/site.js" defer></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -96,41 +97,70 @@
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="/" aria-label="Walker Intelligence Group home">
-    <span class="brand-top">Technology Consulting &amp; Implementation</span>
-    <span class="brand-main">Walker <span>Intelligence Group</span></span>
-  </a>
-  <nav class="site-nav" aria-label="Main">
-    <a href="/#services" aria-current="page">Services</a>
-    <a href="/insights/">Insights</a>
-    <a href="/about/">About</a>
-    <a href="/contact/">Contact</a>
-    <a class="btn" href="/contact/">Free consult</a>
-  </nav>
-  <details class="menu">
-    <summary>Menu</summary>
-    <div class="menu-panel">
-      <span class="menu-label">Services</span>
-        <a href="/workflow-automation/">Workflow Automation</a>
-        <a href="/websites-custom-apps/">Websites &amp; Custom Apps</a>
-        <a href="/technology-infrastructure/">Technology Infrastructure</a>
-        <a href="/technology-strategy/">Technology Strategy</a>
-        <a href="/ai-integration/">AI Integration</a>
-        <a href="/cost-optimization/">Cost Optimization</a>
-      <span class="menu-label">Company</span>
-      <a href="/insights/">Insights</a>
-      <a href="/about/">About</a>
-      <a href="/contact/">Contact</a>
-      <a href="tel:+13175317681">Call 317-531-7681</a>
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="Walker Intelligence Group home"><span class="brand-main">Walker <span>Intelligence Group</span></span></a>
+    <nav class="primary-nav" aria-label="Main">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <button class="nav-link nav-trigger" type="button" aria-expanded="false" aria-controls="mega-services" aria-current="page">Services <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5 6 8.5 10 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="mega" id="mega-services">
+            <div class="mega-inner">
+              <div>
+                <p class="mega-kicker">Services</p>
+                <p class="mega-title">We plan it, build it, and keep it running.</p>
+                <a class="text-link" href="/#services">All services</a>
+              </div>
+              <ul class="mega-grid">
+              <li><a href="/workflow-automation/"><strong>Workflow Automation</strong><span>Automate data entry, reporting, routing, and follow-ups.</span></a></li>
+              <li><a href="/websites-custom-apps/"><strong>Websites &amp; Custom Apps</strong><span>Lead-generating websites, portals, dashboards, and custom tools.</span></a></li>
+              <li><a href="/technology-infrastructure/"><strong>Technology Infrastructure</strong><span>Cloud setup, backups, security, and technology audits.</span></a></li>
+              <li><a href="/technology-strategy/"><strong>Technology Strategy</strong><span>A clear, practical technology plan for your leadership team.</span></a></li>
+              <li><a href="/ai-integration/"><strong>AI Integration</strong><span>Put AI to work on documents, email, and repetitive knowledge work.</span></a></li>
+              <li><a href="/cost-optimization/"><strong>Cost Optimization</strong><span>Cut software waste, right-size cloud spend, automate manual work.</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="/#approach">How we work</a></li>
+        <li class="nav-item"><a class="nav-link" href="/insights/">Insights</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="header-phone" href="tel:+13175317681">317-531-7681</a>
+    <a class="btn btn-sm" href="/contact/">Free consult</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
-  </details>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <span class="mobile-label">Services</span>
+    <ul>
+      <li><a href="/workflow-automation/">Workflow Automation</a></li>
+      <li><a href="/websites-custom-apps/">Websites &amp; Custom Apps</a></li>
+      <li><a href="/technology-infrastructure/">Technology Infrastructure</a></li>
+      <li><a href="/technology-strategy/">Technology Strategy</a></li>
+      <li><a href="/ai-integration/">AI Integration</a></li>
+      <li><a href="/cost-optimization/">Cost Optimization</a></li>
+    </ul>
+    <span class="mobile-label">Company</span>
+    <ul>
+      <li><a href="/#approach">How we work</a></li>
+      <li><a href="/insights/">Insights</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+    <div class="mobile-cta">
+      <a class="btn" href="/contact/">Book a free 30-minute consult</a>
+    </div>
+    <div class="mobile-contact"><a href="tel:+13175317681">317-531-7681</a><a href="mailto:dustin@walkerig.com">dustin@walkerig.com</a></div>
+  </div>
 </header>
 
 <main>
-  <div class="wrap crumbs"><a href="/">Home</a> / <a href="/#services">Services</a> / Technology Infrastructure</div>
-
   <section class="hero">
     <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep" aria-hidden="true">/</span><a href="/#services">Services</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Technology Infrastructure</span></nav>
       <span class="eyebrow">Technology Infrastructure</span>
       <h1>A secure foundation your business <em>can rely on</em>.</h1>
       <p class="lede">Cloud setup, backups, security, and a clear picture of what you have. We organize your technology so it is safe, reliable, and ready to grow.</p>
@@ -209,9 +239,9 @@
     <div class="wrap">
       <h2>Related services</h2>
       <div class="grid">
-        <a class="card" href="/cost-optimization/"><h3>Cost Optimization</h3><p>Cut software waste, right-size cloud spend, automate manual work.</p><span class="more">Learn more &rarr;</span></a>
-        <a class="card" href="/technology-strategy/"><h3>Technology Strategy</h3><p>A clear, practical technology plan for your leadership team.</p><span class="more">Learn more &rarr;</span></a>
-        <a class="card" href="/workflow-automation/"><h3>Workflow Automation</h3><p>Automate data entry, reporting, routing, and follow-ups.</p><span class="more">Learn more &rarr;</span></a>
+        <a class="card" href="/cost-optimization/"><h3>Cost Optimization</h3><p>Cut software waste, right-size cloud spend, automate manual work.</p><span class="more">Learn more</span></a>
+        <a class="card" href="/technology-strategy/"><h3>Technology Strategy</h3><p>A clear, practical technology plan for your leadership team.</p><span class="more">Learn more</span></a>
+        <a class="card" href="/workflow-automation/"><h3>Workflow Automation</h3><p>Automate data entry, reporting, routing, and follow-ups.</p><span class="more">Learn more</span></a>
       </div>
     </div>
   </section>
@@ -219,10 +249,13 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="footer-name" href="/">Walker <span>Intelligence Group</span></a>
-        <p>Technology consulting &amp; implementation</p>
-        <p class="footer-contact"><a href="tel:+13175317681">317-531-7681</a><span aria-hidden="true">&middot;</span><a href="mailto:dustin@walkerig.com">dustin@walkerig.com</a></p>
+      <div class="footer-connect">
+        <h4>Let's connect</h4>
+        <ul>
+          <li><a href="/contact/">Book a free consult</a></li>
+          <li><a href="tel:+13175317681">317-531-7681</a></li>
+          <li><a href="mailto:dustin@walkerig.com">dustin@walkerig.com</a></li>
+        </ul>
       </div>
       <nav aria-label="Services">
         <h4>Services</h4>
@@ -238,6 +271,7 @@
       <nav aria-label="Company">
         <h4>Company</h4>
         <ul>
+          <li><a href="/#approach">How we work</a></li>
           <li><a href="/insights/">Insights</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="/contact/">Contact</a></li>
@@ -245,7 +279,8 @@
       </nav>
     </div>
     <div class="footer-base">
-      <span>&copy; 2026 Walker Intelligence Group<span class="sep" aria-hidden="true">&middot;</span><a href="/privacy/">Privacy Policy</a></span>
+      <a class="footer-name" href="/">Walker <span>Intelligence Group</span></a>
+      <span>Technology consulting &amp; implementation<span class="sep" aria-hidden="true">&middot;</span>&copy; 2026<span class="sep" aria-hidden="true">&middot;</span><a href="/privacy/">Privacy Policy</a></span>
     </div>
   </div>
 </footer>
