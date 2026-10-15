@@ -50,7 +50,7 @@ SERVICES = [
         "title": "AI Integration Services in Indianapolis | Walker IG",
         "desc": "We find where AI saves your team time, then build and run the tools: document review, data extraction, summaries, and private AI assistants.",
         "h1": "AI integration that does <em>real work</em> for your team.",
-        "lede": "We find the places where AI actually saves time in your business, then build the tools, connect them to your systems, and keep them running. No demos that go nowhere.",
+        "lede": "We find the places where AI actually saves time in your business. Then we build the tools, connect them to your systems, and keep them running. No demos that go nowhere.",
         "card": "Put AI to work on documents, email, and repetitive knowledge work.",
         "problem": [
             "Most businesses have tried ChatGPT. Very few have turned it into something the whole team uses every day. The gap is not the AI. It is the work of fitting it into your real processes, your data, and your security rules.",
@@ -149,8 +149,8 @@ SERVICES = [
         "lede": "New tools, automation, cloud, AI. There is no shortage of options. We help you sort out what is worth doing, in what order, and then we help you build it.",
         "card": "A clear, practical technology plan for your leadership team.",
         "problem": [
-            "Most leadership teams know their technology could work better, but it is hard to know where to start. Every vendor has a pitch, every tool promises to change everything, and it is tough to tell what is real, what is safe, and what is worth the money.",
-            "We give you an honest outside view. We look at your operations, your systems, and your goals, and tell you which improvements will make a measurable difference, whether that is better software, automation, stronger security, or AI. Then, unlike most advisors, we can build what we recommend.",
+            "Most leadership teams know their technology could work better, but it is hard to know where to start. Every vendor has a pitch, and every tool promises to change everything. It is tough to tell what is real, what is safe, and what is worth the money.",
+            "We give you an honest outside view. We look at your operations, systems, and goals. Then we tell you which improvements will make a measurable difference, whether that is better software, automation, stronger security, or AI. Then, unlike most advisors, we can build what we recommend.",
         ],
         "offer": [
             ("Technology assessment", "A plain-English review of your current tools, systems, data, and processes: what works, what is at risk, and what is holding you back."),
@@ -303,7 +303,7 @@ ARTICLES = [
             ("Does it matter if the consultant is local?", """
         <p>Not always. A lot of technology work can be done remotely. But a partner in the Indianapolis area can sit down with your team, see how work really moves through your business, and be there in person when it matters. It also helps to work with someone who knows the local business community and resources like Indiana's <a href="/insights/indiana-in-ai-initiative-small-business/">IN AI initiative</a>.</p>"""),
             ("How we answer these questions", """
-        <p>Walker Intelligence Group is a technology consulting and implementation firm in Indianapolis, and AI is one of the tools we use. We plan the work with you, then build it, host it, and keep it running. We like to start with one focused project that proves its value. We choose tools based on how sensitive your data is, we are not tied to any software vendor, and we will tell you when AI is not the right fit.</p>
+        <p>Walker Intelligence Group is a technology consulting and implementation firm in Indianapolis, and AI is one of the tools we use. We plan the work with you. Then we build it, host it, and keep it running. We like to start with one focused project that proves its value. We choose tools based on how sensitive your data is. We are not tied to any software vendor, and we will tell you when AI is not the right fit.</p>
         <p>If you want to see how that works for your business, <a href="/contact/">book a free 30-minute consult</a>. Bring these eight questions. We are happy to answer them.</p>"""),
         ],
         "faq": [
@@ -359,7 +359,7 @@ ARTICLES = [
           <li>What does an hour of that person's time cost you, including wages and benefits?</li>
           <li>How much of the task could be automated or sped up?</li>
         </ul>
-        <p>Multiply them together for a weekly savings estimate, then compare it to the cost of the fix. Here is an example with made-up numbers: a task that takes 10 hours a week, at $35 an hour, that is 60% automatable, is worth about $210 a week, or roughly $10,000 a year. If the fix costs less than that in its first year, it is worth a serious look. Use your own numbers, and include the soft benefits too, like faster replies to customers and fewer mistakes.</p>"""),
+        <p>Multiply them together for a weekly savings estimate, then compare it to the cost of the fix. Here is an example with made-up numbers. Say a task takes 10 hours a week at $35 an hour, and 60% of it can be automated. That is worth about $210 a week, or roughly $10,000 a year. If the fix costs less than that in its first year, it is worth a serious look. Use your own numbers, and include the soft benefits too, like faster replies to customers and fewer mistakes.</p>"""),
             ("How to keep costs down", """
         <ul>
           <li><strong>Start with one workflow.</strong> Prove the value before you expand.</li>
@@ -371,7 +371,7 @@ ARTICLES = [
             ("AI is one option, not the only one", """
         <p>Sometimes the right answer is not AI at all. A simple automation, better use of software you already own, or cleaning up how information moves between your systems can deliver the same savings for less money and less risk. Start with the problem, then pick the tool. AI earns its place when the work involves reading, writing, or judgment that simpler automation cannot handle.</p>"""),
             ("Get a real number for your business", """
-        <p>General ranges only go so far. The fastest way to get a real number is to talk through one specific problem. In a <a href="/contact/">free 30-minute consult</a>, we will look at what is slowing your team down, tell you whether AI, automation, or a simpler fix makes the most sense, and give you an honest idea of cost. Then, if you want, we build it, host it, and support it. See our <a href="/ai-integration/">AI integration</a> services for what that looks like.</p>"""),
+        <p>General ranges only go so far. The fastest way to get a real number is to talk through one specific problem. In a <a href="/contact/">free 30-minute consult</a>, we will look at what is slowing your team down. We will tell you whether AI, automation, or a simpler fix makes the most sense, and give you an honest idea of cost. Then, if you want, we build it, host it, and support it. See our <a href="/ai-integration/">AI integration</a> services for what that looks like.</p>"""),
         ],
         "faq": [
             ("Is ChatGPT enough for a small business?", "It is a good place to start for writing and research. It will not connect to your systems or run processes on its own. When you want AI to do work automatically, you need an automation or a custom tool."),
@@ -418,7 +418,7 @@ ARTICLES = [
         </ul>"""),
             ("Where we fit", """
         <p>Walker Intelligence Group is a technology consulting and implementation firm based in Indianapolis, and AI is part of what we do. We think IN AI is a good thing for Indiana businesses, and we are glad to see the state take AI seriously for small and mid-sized employers.</p>
-        <p>Our job is the next step. Once you have an idea of where AI could help, we help you pick the right first project, whether that turns out to be AI, automation, or a simpler technology fix, then build it, host it, and support it. If you have been to an IN AI event and want help turning what you learned into something your team uses every day, <a href="/contact/">book a free 30-minute consult</a>. You can also read <a href="/insights/how-much-does-ai-cost-small-business/">what AI costs for a small business</a> or <a href="/insights/how-to-choose-an-ai-consultant-indianapolis/">how to choose an AI consultant</a>.</p>"""),
+        <p>Our job is the next step. Once you know where AI could help, we help you pick the right first project. Sometimes that is AI, and sometimes automation or a simpler fix does the job better. Either way, we build it, host it, and support it. If you have been to an IN AI event and want help turning what you learned into something your team uses every day, <a href="/contact/">book a free 30-minute consult</a>. You can also read <a href="/insights/how-much-does-ai-cost-small-business/">what AI costs for a small business</a> or <a href="/insights/how-to-choose-an-ai-consultant-indianapolis/">how to choose an AI consultant</a>.</p>"""),
             ("Sources", """
         <ul>
           <li><a href="https://www.cicpindiana.com/ai/" rel="noopener">IN AI hub, Indiana Corporate Partnership</a></li>
@@ -786,14 +786,14 @@ def about_page():
       {crumbs(('Home', '/'), ('About', None))}
       <span class="eyebrow">About</span>
       <h1>A partner who plans it <em>and builds it</em>.</h1>
-      <p class="lede">Walker Intelligence Group is a technology consulting and implementation firm based in Indianapolis. We help organizations figure out where modern technology, automation, and AI fit, then we build, deploy, and support the solution.</p>
+      <p class="lede">Walker Intelligence Group is a technology consulting and implementation firm based in Indianapolis. We help organizations figure out where modern technology, automation, and AI fit. Then we build, deploy, and support the solution.</p>
     </div>
   </section>
 
   <section>
     <div class="wrap prose">
       <h2>Meet the founder</h2>
-      <p>Walker Intelligence Group was founded in 2026 by Dustin Walker, a technology leader with more than 25 years of experience implementing, administering, and leading technology for organizations. Over that career he has worked hands-on across many roles and many generations of technology, from running the systems businesses depend on every day to leading the teams and projects that put new ones in place.</p>
+      <p>Walker Intelligence Group was founded in 2026 by Dustin Walker, a technology leader with more than 25 years of experience implementing, administering, and leading technology for organizations. Over that career he has worked hands-on across many roles and many generations of technology. He has run the systems businesses depend on every day and led the teams and projects that put new ones in place.</p>
       <p>Dustin holds a degree in Computer and Information Technology from Purdue University. That combination of formal training and decades of real-world delivery is why WIG can both advise and build. He has seen plenty of technology waves come and go, and he knows the difference between hype and tools that actually change how a business runs.</p>
       <p>He started Walker Intelligence Group because he is passionate about helping small and medium-sized businesses see what is possible with technology and innovation, including AI. Large companies have whole departments for this. Most growing businesses do not. WIG gives them a senior, hands-on partner who explains things in plain English and then gets the work done.</p>
       <ul class="checks">
@@ -954,7 +954,7 @@ def privacy_page():
   <section>
     <div class="wrap prose">
       <h2>Analytics and cookies</h2>
-      <p>We use Google Analytics to understand how visitors use this site, for example which pages are viewed, how people found us, and whether a contact form was completed. Google Analytics uses cookies and collects information such as your browser type, device, approximate location, and pages visited. It does not give us your name or contact details.</p>
+      <p>We use Google Analytics to understand how visitors use this site. For example, it shows which pages are viewed, how people found us, and whether a contact form was completed. Google Analytics uses cookies and collects information such as your browser type, device, approximate location, and pages visited. It does not give us your name or contact details.</p>
       <p>You can learn how Google uses this data at <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">policies.google.com/technologies/partner-sites</a>, and you can opt out with the <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">Google Analytics opt-out browser add-on</a>. You can also block or delete cookies in your browser settings.</p>
     </div>
   </section>
@@ -962,7 +962,7 @@ def privacy_page():
   <section>
     <div class="wrap prose">
       <h2>How we share information</h2>
-      <p>We do not sell or rent your personal information. We share it only with service providers that help us run this website and our business, such as our website host, form service, and analytics provider, or when required by law.</p>
+      <p>We do not sell or rent your personal information. We share it only with service providers that help us run this website and our business, such as our website host, form service, and analytics provider. We may also share it when required by law.</p>
     </div>
   </section>
 
@@ -1063,7 +1063,7 @@ def article_page(a):
     <section>
       <div class="wrap prose author-box">
         <span class="eyebrow">About the author</span>
-        <p><a href="/about/">Dustin Walker</a> founded Walker Intelligence Group, a technology consulting and implementation firm in Indianapolis. He has more than 25 years of experience in technology implementation, administration, and leadership, and a degree in Computer and Information Technology from Purdue University. He is passionate about helping small and medium-sized businesses put AI to work.</p>
+        <p><a href="/about/">Dustin Walker</a> founded Walker Intelligence Group, a technology consulting and implementation firm in Indianapolis. He has more than 25 years of experience in technology implementation, administration, and leadership. He holds a degree in Computer and Information Technology from Purdue University. He is passionate about helping small and medium-sized businesses put AI to work.</p>
       </div>
     </section>
   </article>
