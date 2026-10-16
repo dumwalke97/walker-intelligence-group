@@ -16,7 +16,7 @@ PHONE_DISPLAY = "317-531-7681"
 PHONE_TEL = "+13175317681"
 EMAIL = "dustin@walkerig.com"
 TODAY = date.today().isoformat()
-FONTS = ("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600"
+FONTS = ("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700"
          "&family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap")
 CONSULT = "Book a free 30-minute consult"
 GA_ID = "G-RJ7RK3Y0N4"  # Google Analytics 4, Walker Intelligence Group property
@@ -458,7 +458,7 @@ def head(title, desc, path, schema, og_type="website", extra_meta=""):
 {ANALYTICS}  <title>{esc(title)}</title>
   <meta name="description" content="{esc(desc)}" />
   <link rel="canonical" href="{url}" />
-  <meta name="theme-color" content="#0e0f11" />
+  <meta name="theme-color" content="#CAD1DE" />
   <meta property="og:type" content="{og_type}" />
 {extra_meta}  <meta property="og:site_name" content="Walker Intelligence Group" />
   <meta property="og:title" content="{esc(title)}" />
