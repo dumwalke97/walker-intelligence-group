@@ -495,7 +495,7 @@ def header(current=""):
         f'              <li><a href="/{s["slug"]}/"><strong>{esc(s["name"])}</strong><span>{esc(s["card"])}</span></a></li>'
         for s in SERVICES)
     mobile_svc = "\n".join(f'      <li><a href="/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in SERVICES)
-    consult = '' if current == 'contact' else '    <a class="btn btn-sm" href="/contact/">Free consult</a>\n'
+    consult = f'    <a class="btn btn-sm" href="/contact/"{cur("contact")}>Contact</a>\n'
     services_cur = ' aria-current="page"' if current == 'services' else ''
     return f"""<header class="site-header">
   <div class="header-inner">
@@ -520,11 +520,9 @@ def header(current=""):
         <li class="nav-item"><a class="nav-link" href="/#approach">How we work</a></li>
         <li class="nav-item"><a class="nav-link" href="/insights/"{cur('insights')}>Insights</a></li>
         <li class="nav-item"><a class="nav-link" href="/about/"{cur('about')}>About</a></li>
-        <li class="nav-item"><a class="nav-link" href="/contact/"{cur('contact')}>Contact</a></li>
       </ul>
     </nav>
     <div class="header-actions">
-      <a class="header-phone" href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
 {consult}      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </div>

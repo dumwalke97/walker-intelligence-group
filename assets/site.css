@@ -116,7 +116,7 @@ img { max-width: 100%; height: auto; }
 .brand-main { color: #0b0c0e; -webkit-text-stroke: 0.45px currentColor; }   /* thicken the fine serif strokes */
 .brand-main span { color: var(--navy); }
 
-.primary-nav { flex: 1; }
+.primary-nav { margin-left: auto; }   /* menu links sit with the Contact button on the right */
 .nav-list { list-style: none; display: flex; align-items: center; gap: 0.25rem; }
 .nav-link {
   display: inline-flex;
@@ -139,9 +139,8 @@ img { max-width: 100%; height: auto; }
 .nav-link svg { width: 12px; height: 12px; transition: transform 0.2s; }
 .nav-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
 
-.header-actions { display: flex; align-items: center; gap: 1.25rem; margin-left: auto; }
-.header-phone { color: var(--on-surface); text-decoration: none; font-size: 0.97rem; font-weight: 700; white-space: nowrap; }
-.header-phone:hover { color: var(--navy); }
+.header-actions { display: flex; align-items: center; gap: 1.25rem; margin-left: -0.75rem; }
+@media (max-width: 960px) { .header-actions { margin-left: auto; } }
 
 /* Services mega menu */
 .mega {
@@ -242,9 +241,6 @@ img { max-width: 100%; height: auto; }
 .mobile-contact { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; margin-top: 1.25rem; font-weight: 500; }
 .mobile-contact a { color: var(--text); text-decoration: none; }
 
-@media (max-width: 1180px) {
-  .header-phone { display: none; }
-}
 @media (max-width: 960px) {
   .primary-nav { display: none; }
   .menu-toggle { display: flex; }
