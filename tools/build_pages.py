@@ -630,6 +630,17 @@ def breadcrumb_schema(items):
     }
 
 
+def faq_schema(url, faq):
+    return {
+        "@type": "FAQPage",
+        "@id": f"{url}#faq",
+        "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+            for q, a in faq
+        ],
+    }
+
+
 PROVIDER = {"@id": f"{SITE}/#business"}
 FOUNDER = {
     "@type": "Person",
@@ -667,6 +678,7 @@ def service_page(s):
                 "provider": PROVIDER,
                 "areaServed": [{"@type": "City", "name": "Indianapolis"}, {"@type": "State", "name": "Indiana"}],
             },
+            faq_schema(SITE + path, s["faq"]),
             breadcrumb_schema([("Home", "/"), ("Services", "/#services"), (s["name"], path)]),
         ],
     }
@@ -1013,6 +1025,7 @@ def article_page(a):
                 "about": {"@id": f"{SITE}/{svc['slug']}/#service"},
             },
             FOUNDER,
+            faq_schema(url, a["faq"]),
             breadcrumb_schema([("Home", "/"), ("Insights", "/insights/"), (strip_tags(a["h1"]), path)]),
         ],
     }
